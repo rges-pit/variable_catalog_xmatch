@@ -1,0 +1,189 @@
+# -*- coding: utf-8 -*-
+
+from sys import argv
+from astroquery.vizier import Vizier
+from astroquery.gaia import Gaia
+from astropy import wcs, coordinates, units, visualization, table
+import requests
+import argparse
+
+# Definitions of supported catalogs to query,
+# with column mappings used to parse the query output to a
+# results table.  Catalog identifiers given reflect those
+# used by Vizier.
+SUPPORTED_CATALOGS = {'2MASS': ['2MASS',
+                                {'_RAJ2000': '_RAJ2000', '_DEJ2000': '_DEJ2000', 'Jmag': 'Jmag', 'e_Jmag': 'e_Jmag', \
+                                 'Hmag': 'Hmag', 'e_Hmag': 'e_Hmag', 'Kmag': 'Kmag', 'e_Kmag': 'e_Kmag'},
+                                {'Jmag': '<20'}],
+                      'VPHAS+': ['II/341',
+                                 {'sourceID': 'sourceID', 'RAJ2000': '_RAJ2000', 'DEJ2000': '_DEJ2000',
+                                  'gmag': 'gmag', 'e_gmag': 'e_gmag', 'rmag': 'rmag', 'e_rmag': 'e_rmag',
+                                  'imag': 'imag', 'e_imag': 'e_imag', 'clean': 'clean'},
+                                 {}],
+                      'Gaia-DR2': ['I/345/gaia2',
+                                   {'RA_ICRS': 'ra', 'DE_ICRS': 'dec', 'Source': 'source_id',
+                                    'e_RA_ICRS': 'ra_error', 'e_DE_ICRS': 'dec_error',
+                                    'FG': 'phot_g_mean_flux', 'e_FG': 'phot_g_mean_flux_error',
+                                    'FBP': 'phot_bp_mean_flux', 'e_FBP': 'phot_bp_mean_flux_error',
+                                    'FRP': 'phot_rp_mean_flux', 'e_FRP': 'phot_rp_mean_flux_error'},
+                                   {}],
+                      'Gaia-EDR3': ['I/350/gaiaedr3',
+                                    {'RA_ICRS': 'ra', 'DE_ICRS': 'dec', 'Source': 'source_id',
+                                     'e_RA_ICRS': 'ra_error', 'e_DE_ICRS': 'dec_error',
+                                     'FG': 'phot_g_mean_flux', 'e_FG': 'phot_g_mean_flux_error',
+                                     'FBP': 'phot_bp_mean_flux', 'e_FBP': 'phot_bp_mean_flux_error',
+                                     'FRP': 'phot_rp_mean_flux', 'e_FRP': 'phot_rp_mean_flux_error',
+                                     'PM': 'pm', 'pmRA': 'pm_ra', 'e_pmRA': 'pm_ra_error',
+                                     'pmDE': 'pm_dec', 'e_pmDE': 'pm_dec_error',
+                                     'Plx': 'parallax', 'e_Plx': 'parallax_error'},
+                                    # 'parallax':'parallax', 'parallax_error': 'parallax_error'},
+                                    {}],
+                      'OGLE_Bulge_periodic_variables': ['II/213',
+                                                        {'RAJ2000': 'ra', 'DEJ2000': 'dec', 'OGLE': 'source_id',
+                                                         'Per': 'period', 'T0': 'epoch',
+                                                         'Imag': 'Imag', 'V-I': 'VI',
+                                                         'DImag': 'Iamplitude',
+                                                         'Type': 'type'},
+                                                        {}]
+                      }
+
+
+def search_vizier_for_sources(args, row_limit=-1,
+                              coords='sexigesimal', log=None, debug=False):
+    """Function to perform online query of the 2MASS catalogue and return
+    a catalogue of known objects within the field of view
+
+    Inputs:
+        :param str ra: RA J2000 in sexigesimal format [default, accepts degrees]
+        :param str dec: Dec J2000 in sexigesimal format [default, accepts degrees]
+        :param float radius: Search radius in arcmin
+        :param str catalog: Catalog to search.  Options include:
+                                    ['2MASS', 'VPHAS+']
+    """
+
+    (cat_id,cat_col_dict,cat_filters) = SUPPORTED_CATALOGS[args.catalog]
+
+    if args.catalog=='Gaia-EDR3':
+        v = Vizier(column_filters=cat_filters)
+    else:
+        v = Vizier(columns=list(cat_col_dict.keys()),\
+                column_filters=cat_filters)
+
+    v = Vizier(column_filters=cat_filters)
+
+    v.ROW_LIMIT = row_limit
+
+    if 'sexigesimal' in coords:
+        c = coordinates.SkyCoord(args.ra+' '+args.dec, frame='icrs', unit=(units.hourangle, units.deg))
+    else:
+        c = coordinates.SkyCoord(float(args.ra), float(args.dec), frame='icrs', unit=(units.deg, units.deg))
+
+    r = float(args.radius) * units.arcminute
+
+    catalog_list = Vizier.find_catalogs(cat_id)
+
+    (status, result) = query_vizier_servers(v, c, r, [cat_id], debug=debug)
+
+    if result != None and len(result) == 1:
+
+        col_list = []
+        for col_id, col_name in cat_col_dict.items():
+            col = table.Column(name=col_name, data=result[0][col_id].data)
+            col_list.append(col)
+
+        result = table.Table( col_list )
+    else:
+        result = table.Table([])
+    return result
+
+def query_vizier_servers(query_service, coord, search_radius, catalog_id, log=None,
+                        debug=False):
+    """Function to query different ViZier servers in order of preference, as
+    a fail-safe against server outages.  Based on code from NEOExchange by
+    T. Lister
+    Input:
+    query_service  Astroquery Vizier service object
+    coord   SkyCoord Target coordinates
+    search_radius   Angle    Search radius (deg)
+    catalog_id  str      Name of catalog to be searched in ViZier's notation
+    """
+
+    vizier_servers_list = ['vizier.cfa.harvard.edu', 'vizier.hia.nrc.ca', 'vizier.u-strasbg.fr']
+
+    query_service.VIZIER_SERVER = vizier_servers_list[0]
+
+    query_service.TIMEOUT = 60
+
+    continue_query = True
+    iserver = 0
+    status = True
+
+    while continue_query:
+        query_service.VIZIER_SERVER = vizier_servers_list[iserver]
+        query_service.TIMEOUT = 60
+
+        if debug:
+            print('Searching catalog server '+repr(query_service.VIZIER_SERVER))
+
+        if log != None:
+            log.warning('Searching catalog server '+repr(query_service.VIZIER_SERVER))
+
+        try:
+            result = query_service.query_region(coord, radius=search_radius, catalog=catalog_id)
+
+        # Handle long timeout requests:
+        except (requests.exceptions.ReadTimeout, requests.exceptions.ConnectionError):
+            if debug:
+                print('Catalog server '+repr(query_service.VIZIER_SERVER)+' timed out, trying longer timeout')
+            if log!= None:
+                log.warning('Catalog server '+repr(query_service.VIZIER_SERVER)+' timed out, trying longer timeout')
+
+            query_service.TIMEOUT = 120
+            result = query_service.query_region(coord, radius=search_radius, catalog=catalog_id)
+
+        # Handle preferred-server timeout by trying the alternative server:
+        except requests.exceptions.ConnectTimeout:
+            if debug:
+                print('Catalog server '+repr(query_service.VIZIER_SERVER)+' timed out again')
+            if log != None:
+                log.warning('Catalog server '+repr(query_service.VIZIER_SERVER)+' timed out again')
+
+            iserver += 1
+            if iserver >= len(vizier_servers_list):
+                continue_query = False
+                result = []
+                status = False
+
+                return status, result
+
+        if result == None or len(result) > 0:
+            continue_query = False
+        elif len(result) == 0:
+            iserver += 1
+            if iserver >= len(vizier_servers_list):
+                continue_query = False
+                result = []
+                status = False
+
+    return status, result
+
+def get_args():
+    # Since Dec strings can be negative, which is typically a flag parameter for argparse,
+    # the code needs to be run with the -- option to switch this off, i.e.
+    # > python vizier_tools.py -- 18:30:50.0 -17:30:00 30.0 catalog_name
+    parser = argparse.ArgumentParser()
+    parser.add_argument("ra", help="RA of field center to search [sexigesimal] (prefix all arguments with -- for negative decs)")
+    parser.add_argument("dec", help="Dec of field center to search [sexigesimal]")
+    parser.add_argument('radius', help='search radius in arcmin')
+    parser.add_argument('catalog',
+                        help='ID of the catalog to search, one of '+', '.join(SUPPORTED_CATALOGS))
+    args = parser.parse_args()
+
+    return args
+
+if __name__ == '__main__':
+    args = get_args()
+
+    qs = search_vizier_for_sources(args, debug=True)
+
+    print(repr(qs))
