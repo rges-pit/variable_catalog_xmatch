@@ -1,13 +1,13 @@
-==Variable Star Data==
+== Variable Star Data ==
 
 This folder contains data on catalogs of variable stars identified from previous surveys
 of the Roman Galactic Exoplanet Survey (RGES) fields.  
 
-===OGLE4===
+=== OGLE4 ===
 
 Files prefixed with the name 'ogle4' were obtained from the online catalogs of 
 variable stars identified in the OGLE-IV survey.  
-Access to these catalogs is provided courtesy of the OGLE team [https://www.astrouw.edu.pl/ogle/ogle4/OCVS/blg/](here). 
+Access to these catalogs is provided courtesy of the OGLE team [here](https://www.astrouw.edu.pl/ogle/ogle4/OCVS/blg/). 
 
 For clarity in this repository the files have been renamed as follows:
 [https://www.astrouw.edu.pl/ogle/ogle4/OCVS/blg/cep/ident.dat](ogle4_cephieds.dat)
