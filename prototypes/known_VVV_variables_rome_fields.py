@@ -12,7 +12,7 @@ file_of_all_VVV_variables = '/home/ytsapras/ROME-REA/vvv_vizier_votable.tsv'
 
 # Do you also want a plot with the locations of these targets?
 plot_fields_VVV_variables = True
-            
+
 #############################################################
 def filter_lines_containing_word(file_path, word, output_file_path):
     """

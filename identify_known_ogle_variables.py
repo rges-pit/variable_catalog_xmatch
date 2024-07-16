@@ -2,42 +2,127 @@
 # within a specific set of pointings.
 # Program is based on original code by Yiannis Tsapras
 from astropy import units as u
+from astropy.coordinates import SkyCoord
+from astropy.table import Table, Column
 import rges_survey_definition
 import argparse
 from os import path
+import utils
 
 
 # Configuration
 # Location of data files of known OGLE variable catalogs
 config = {
     'data_dir': './data/',
-    'variable_types': {
-        'lpv': 'ogle4_LPV.dat',
-        'cephieds': 'ogle4_cephieds.dat',
-        'cephieds_type2': 'ogle4_cephieds_type2',
-        'delta_scuti': 'ogle4_delta_scuti.dat',
-        'eclipsing_binaries': 'ogle4_eclipsing_binaries.dat',
-        'hb': 'ogle4_hb.dat',
-        'rrlyrae': 'ogle4_rrlyrae.dat'
+    'variable_catalogs': {
+        'lpv': {'file': 'ogle4_LPV.dat', 'columns': {'name': 0, 'ra': 2, 'dec': 3}},
+        'cephied': {'file': 'ogle4_cephieds.dat', 'columns': {'name': 0, 'ra': 2, 'dec': 3}},
+        'cephied_type2': {'file': 'ogle4_cephieds_type2.dat', 'columns': {'name': 0, 'ra': 2, 'dec': 3}},
+        'delta_scuti': {'file': 'ogle4_delta_scuti.dat', 'columns': {'name': 0, 'ra': 2, 'dec': 3}},
+        'eclipsing_binary': {'file': 'ogle4_eclipsing_binaries.dat', 'columns': {'name': 0, 'ra': 2, 'dec': 3}},
+        'hb': {'file': 'ogle4_hb.dat', 'columns': {
+            'name': 0, 'ra': [2, 3, 4], 'dec': [5, 6, 7]
+        }},
+        'rrlyrae': {'file': 'ogle4_rrlyrae.dat', 'columns': {'name': 0, 'ra': 2, 'dec': 3}},
     }
 }
 
-def find_ogle_variables(args, field_centers):
+def find_ogle_variables(args, config):
     """
     Function to search the OGLE catalogs of known variables within the list of
     field positions provided.
     Outputs dict ogle_variables catalog of OGLE variables output to file
 
     :param args: dict of user-provided configuration parameters
+    :param config dict of standard configurable key-value pairs
     :param field_centers: list of tuples describing field pointings
     :return: None
     """
 
     # Load and combine the lists of OGLE4 variables of different types
+    ogle_catalog = load_ogle_variable_catalogs(config)
+    print('Loaded ' + str(len(ogle_catalog)) + ' known variables from OGLE 4')
 
     # Identify those objects within the field of view of all given fields
+    survey_catalog = find_variables_in_fov(ogle_catalog)
 
     # Output catalog of known variables within the field
+    utils.output_json_catalog(survey_catalog, args.output_file)
+
+def find_variables_in_fov(ogle_catalog):
+    """
+    Function to select variables from the catalog that lie within the fields given
+
+    :param ogle_catalog: DataFrame of known variables names, types, RA, Dec
+    :param field_centers: list of tuples of field pointings
+    :return: survey_catalog: DataFrame of the variables within the survey
+    """
+
+    # Instantiate RGES survey object
+    RGES = rges_survey_definition.RGESSurvey()
+
+    # Search the catalog and find the indices of stars that lie within the survey field
+    coord_list = SkyCoord(ogle_catalog['RA'], ogle_catalog['Dec'],
+                          frame='icrs', unit=(u.hourangle, u.deg))
+
+    survey_stars = RGES.find_stars_in_survey(coord_list)
+    print('Identified ' + str(len(survey_stars)) + ' OGLE variables within the RGES footprint')
+
+    # Extract the subset of the OGLE catalog for the selected stars
+    survey_catalog = ogle_catalog[survey_stars]
+
+    return survey_catalog
+
+def load_ogle_variable_catalogs(config):
+    """
+    Function to load the catalogs of known OGLE variables from the ASCII .dat
+    format files downloaded from the OGLE 4 catalog website
+    https://www.astrouw.edu.pl/ogle/ogle4/OCVS/blg/
+
+    :param config:
+    :return: ogle_catalog dict Names, types and sky positions of variables
+    """
+
+    # OGLE4 variable catalogs consist of a set of ASCII files of differing formats,
+    # so here we extract the relevant columns in each case and compile them into
+    # a single dictionary
+    catalog = {
+        'name': [],
+        'type': [],
+        'ra': [],
+        'dec': []
+    }
+    for cat_type, cat_config in config['variable_catalogs'].items():
+        with open(path.join(config['data_dir'],cat_config['file']), 'r') as f:
+            lines = f.readlines()
+            for entry in lines:
+                if len(entry.replace('\n','')) > 0:
+                    data = entry.replace('\n', '').split()
+                    name = data[cat_config['columns']['name']]
+                    if isinstance(cat_config['columns']['ra'], int):
+                        ra = data[cat_config['columns']['ra']]
+                        dec = data[cat_config['columns']['dec']]
+                    else:
+                        ra = data[cat_config['columns']['ra'][0]] \
+                                   + ':' + data[cat_config['columns']['ra'][1]] \
+                                   + ':' + data[cat_config['columns']['ra'][2]]
+                        dec = data[cat_config['columns']['dec'][0]] \
+                             + ':' + data[cat_config['columns']['dec'][1]] \
+                             + ':' + data[cat_config['columns']['dec'][2]]
+
+                    catalog['name'].append(name)
+                    catalog['type'].append(cat_type)
+                    catalog['ra'].append(ra)
+                    catalog['dec'].append(dec)
+
+    ogle_catalog = Table([
+        Column(name='Name', data=catalog['name']),
+        Column(name='Type', data=catalog['type']),
+        Column(name='RA', data=catalog['ra']),
+        Column(name='Dec', data=catalog['dec'])
+    ])
+
+    return ogle_catalog
 
 def get_args():
     """
@@ -55,5 +140,4 @@ def get_args():
 
 if __name__ == '__main__':
     args = get_args()
-    rges_fields = rges_survey_definition.get_rges_field_centers()
-    find_ogle_variables(args, field_centers)
+    find_ogle_variables(args, config)
