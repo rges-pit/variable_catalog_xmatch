@@ -1,6 +1,6 @@
 # Program to compile a list of variable stars identified from the OGLE survey
 # within a specific set of pointings.
-# Program is based on original code by Yiannis Tsapras
+# Program is a reimplementation of original code by Yiannis Tsapras
 from astropy import units as u
 from astropy.coordinates import SkyCoord
 from astropy.table import Table, Column
@@ -35,43 +35,17 @@ def find_ogle_variables(args, config):
 
     :param args: dict of user-provided configuration parameters
     :param config dict of standard configurable key-value pairs
-    :param field_centers: list of tuples describing field pointings
     :return: None
     """
 
     # Load and combine the lists of OGLE4 variables of different types
     ogle_catalog = load_ogle_variable_catalogs(config)
-    print('Loaded ' + str(len(ogle_catalog)) + ' known variables from OGLE 4')
 
     # Identify those objects within the field of view of all given fields
-    survey_catalog = find_variables_in_fov(ogle_catalog)
+    survey_catalog = utils.find_variables_in_fov(ogle_catalog, coord_type='sexigesimal')
 
     # Output catalog of known variables within the field
     utils.output_json_catalog(survey_catalog, args.output_file)
-
-def find_variables_in_fov(ogle_catalog):
-    """
-    Function to select variables from the catalog that lie within the fields given
-
-    :param ogle_catalog: DataFrame of known variables names, types, RA, Dec
-    :param field_centers: list of tuples of field pointings
-    :return: survey_catalog: DataFrame of the variables within the survey
-    """
-
-    # Instantiate RGES survey object
-    RGES = rges_survey_definition.RGESSurvey()
-
-    # Search the catalog and find the indices of stars that lie within the survey field
-    coord_list = SkyCoord(ogle_catalog['RA'], ogle_catalog['Dec'],
-                          frame='icrs', unit=(u.hourangle, u.deg))
-
-    survey_stars = RGES.find_stars_in_survey(coord_list)
-    print('Identified ' + str(len(survey_stars)) + ' OGLE variables within the RGES footprint')
-
-    # Extract the subset of the OGLE catalog for the selected stars
-    survey_catalog = ogle_catalog[survey_stars]
-
-    return survey_catalog
 
 def load_ogle_variable_catalogs(config):
     """
@@ -121,6 +95,8 @@ def load_ogle_variable_catalogs(config):
         Column(name='RA', data=catalog['ra']),
         Column(name='Dec', data=catalog['dec'])
     ])
+
+    print('Loaded ' + str(len(ogle_catalog)) + ' known variables from OGLE 4')
 
     return ogle_catalog
 
