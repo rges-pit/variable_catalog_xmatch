@@ -105,3 +105,112 @@ def load_json_catalog(file_path, decimal_degrees=False):
           + path.basename(file_path))
 
     return catalog
+
+def load_ukirt_source_table(file_path):
+    """
+    Function to load a source table file from the UKIRT microlensing survey.
+    Each source table provides the metadata for stars detected within
+    a single field pointing and one of the four CCDs.
+
+    Based on the header information from the source tables, the columns included are:
+    sourceid        Mission specific source identification
+    phot_method     Data pipeline used to produce the photometry
+    obs_year        Calendar year of observations
+    bulge           Bulge
+    field           Time Series Minimum integer time
+    ccdid           Time Series Maximum integer time
+    hjdstart (days) Time Series Minimum Julian Date
+    hjdstop (days)  Time Series Maximum Julian Date
+    hjd_ref (days)  Base Julian Date
+    ra (degrees)    Object Right Ascension
+    dec (degrees)   Object Declination
+    h_mag (mag)     H Magnitude
+    j_mag (mag)     J Magnitude
+    k_mag (mag)     K Magnitude
+    npts            Points in Light Curve
+    k2c9_flag       Flag indicating overlap with K2 C9 field
+    ukirt_evt_flag  Is this a ukirt event
+    ukirt_id        UKIRT survey event identification string
+    ogle_evt_flag   Is this an ogle event
+    ogle_id         OGLE survey event identification string
+    moa_evt_flag    Is this a MOA event
+    moa_id          MOA survey event identification string
+    moa_star_id     MOA survey event label string
+    statnpts        number of points used in MAG statistics calculations
+    minvalue (mag)  minimum value of MAG column
+    maxvalue (mag)  maximum value of MAG column
+    mean (mag)      mean value of MAG column
+    stddevwrtmean (mag) Standard deviation with respect to mean of MAG column
+    median (mag)    median value of MAG column
+    stddevwrtmed (mag)  Standard deviation with respect to median of MAG column
+    n5sigma         Number of points beyond 5 stddev wrt MAG median
+    f5sigma         Fraction of points beyond 5 stddev wrt MAG median
+    medabsdev (mag) Median absolute deviation of MAG column
+    chisquared      Reduced Chi Squared wrt MAG median
+    range595 (mag)  Range of MAG, excluding 5% of minimum and 5% of maximum
+
+    :param file_path: string Path to file
+    :return: Table of file contents
+    """
+
+    COLUMN_LIST = [
+        'sourceid',
+        'phot_method',
+        'obs_year',
+        'bulge',
+        'field',
+        'ccdid',
+        'hjdstart',
+        'hjdstop',
+        'hjd_ref',
+        'ra',
+        'dec',
+        'h_mag',
+        'j_mag',
+        'k_mag',
+        'npts',
+        'k2c9_flag',
+        'ukirt_evt_flag',
+        'ukirt_id',
+        'ogle_evt_flag',
+        'ogle_id',
+        'moa_evt_flag',
+        'moa_id',
+        'moa_star_id',
+        'statnpts',
+        'minvalue',
+        'maxvalue',
+        'mean',
+        'stddevwrtmean',
+        'median',
+        'stddevwrtmed',
+        'n5sigma',
+        'f5sigma',
+        'medabsdev',
+        'chisquared',
+        'range595',
+    ]
+    FLOAT_COLUMNS = ['ra', 'dec']
+
+    if not path.isfile(file_path):
+        raise IOError('Cannot find UKIRT source table ' + file_path)
+
+    data = {key: [] for key in COLUMN_LIST}
+
+    with open(file_path, 'r') as f:
+        file_lines = f.readlines()
+
+        for line in file_lines:
+            if line[0:1] not in ["\\", '|']:
+                entries = line.replace('\n','').split()
+                if len(entries) == len(COLUMN_LIST):
+                    [
+                        data[key].append(float(entries[i]) if key in FLOAT_COLUMNS else entries[i])
+                        for i,key in enumerate(COLUMN_LIST)
+                    ]
+
+    # Reformat the output into a Table for ease of handling
+    table_columns = [Column(name=key, data=data[key]) for key in COLUMN_LIST]
+    source_table = Table(table_columns)
+
+    return source_table
