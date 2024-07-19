@@ -60,6 +60,8 @@ def output_json_catalog(catalog, output_file):
     with open(output_file, "w") as outfile:
         outfile.write(json_object)
 
+    print('Output JSON catalog to ' + output_file)
+
 def load_json_catalog(file_path, decimal_degrees=False):
     """
     Function to load a catalog of stars in the standard format output by this code
@@ -214,3 +216,43 @@ def load_ukirt_source_table(file_path):
     source_table = Table(table_columns)
 
     return source_table
+
+def load_ukirt_lut(lut_file):
+    """
+    Function to load the UKIRT Look-Up Table
+
+    :param lut_file:
+    :return: Table of LUT contents
+    """
+
+    if not path.isfile(lut_file):
+        raise IOError('Cannot find UKIRT survey LUT file')
+
+    with open(lut_file, 'r') as f:
+        json_object = json.loads(f.read())
+
+    source_tables = []
+    ramin = []
+    ramax = []
+    decmin = []
+    decmax = []
+    for key, entry in json_object.items():
+        source_tables.append(key)
+        ramin.append(float(entry['ra_min']))
+        ramax.append(float(entry['ra_max']))
+        decmin.append(float(entry['dec_min']))
+        decmax.append(float(entry['dec_max']))
+
+    # Reformat the output into a Table for ease of handling
+    lut = Table([
+        Column(name='source_table', data=source_tables),
+        Column(name='RA_min', data=ramin),
+        Column(name='RA_max', data=ramax),
+        Column(name='Dec_min', data=decmin),
+        Column(name='Dec_max', data=decmax)
+    ])
+
+    print('Loaded ' + str(len(lut)) + ' entries from catalog '
+          + path.basename(lut_file))
+
+    return lut
