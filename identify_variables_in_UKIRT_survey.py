@@ -10,21 +10,23 @@ import numpy as np
 from os import path
 from astropy.coordinates import SkyCoord
 from astropy import units as u
+import glob
 
 def find_ukirt_data_for_variables(args):
     """
     Function to search the source tables of the UKIRT microlensing survey for entries
     corresponding to stars from an input catalog.
 
+    Originally this function searched for each known variable over all source tables,
+    but since the source tables are so large they cannot be easily stored in memory,
+    this approach demands we repeatedly reload the source tables, which is very slow.
+    So the function was refactored to scan each table once for all known variables.
+
     :param args: ArgumentParser object
     :return: None, outputs updated JSON catalog with lightcurve files where available
     """
 
     ## NOTE TO SELF
-    ## This approach is really slow because it involves multiple reads of the source tables
-    ## Better would be to load the var_catalog and each source table in term,
-    ## and repeat the cross-match of coordinates once per source table
-    ##
     ## Also need to write a directory walker to catalog the paths to each lightcurve file,
     ## since it doesn't relate to the source table
 
@@ -38,38 +40,51 @@ def find_ukirt_data_for_variables(args):
     # Load UKIRT look-up table of field pointings
     lut = utils.load_ukirt_lut(args.lut)
 
-    # For each catalog star, check whether it falls within a UKIRT field.
-    # If it does, load the source table for that field and identify the corresponding
-    # lightcurve file, if any.
-    counter = 0
-    for j,star in enumerate(var_catalog):
-        print('Searching for ' + star['Name'] + ', ' + str(j)
-              + ' out of ' + str(len(var_catalog)) + ', counter=' + str(counter))
+    # Make list of the source tables
+    source_table_list = glob.glob(path.join(args.ukirt_dir,
+                                            'UKIRT_year*_field*_ccd*_md.tbl'))
 
-        star_source_tables = find_star_in_LUT(lut, star['RA'], star['Dec'])
+    # Iterating over each source table, load the set of objects detected in
+    # that field pointing, CCD and year of survey
+    for source_table_file in source_table_list:
+        print('Scanning for known variables in source table '
+              + path.basename(source_table_file))
 
-        if len(star_source_tables) > 0:
-            lc_data = []
-            tableset = []
+        # Load the source table
+        source_table = utils.load_ukirt_source_table(source_table_file)
 
-            for table_file in star_source_tables:
-                print('Searching source table ' + path.basename(table_file))
+        # For each catalog star, check whether it falls within the current field.
+            # If it does, identify the corresponding lightcurve file, if any.
+        for j,star in enumerate(var_catalog):
+            if j%1000 == 0:
+                print('Searching for ' + star['Name'] + ', ' + str(j)
+                  + ' out of ' + str(len(var_catalog)))
 
-                source_table = utils.load_ukirt_source_table(path.join(args.ukirt_dir,
-                                                                   table_file))
+            star_source_tables = find_star_in_LUT(lut, star['RA'], star['Dec'])
+
+            if path.basename(source_table_file) in star_source_tables:
+                lc_data = star['UKIRT_source_table']
+                tableset = star['UKIRT_lc_files']
+                if not lc_data:
+                    lc_data = []
+                if not tableset:
+                    tableset = []
+
                 lc = find_star_in_source_table(source_table, star['RA'], star['Dec'])
+
                 if len(lc) > 0:
                     lc_data.append(lc)
-                    tableset.append(table_file)
-                    counter += 1
+                    tableset.append(path.basename(source_table_file))
 
-            var_catalog['UKIRT_source_table'][j] = tableset
-            var_catalog['UKIRT_lc_files'][j] = lc_data
-            print('Updated catalog entry for ' + star['Name'] + ':')
-            print(var_catalog[j])
+                # If we get to this point and the lc_data list has no entries,
+                # then set the entry back to None
+                if len(lc_data) == 0:
+                    lc_data = None
+                    tableset = None
 
-        if counter >= 5:
-            break
+                var_catalog['UKIRT_source_table'][j] = tableset
+                var_catalog['UKIRT_lc_files'][j] = lc_data
+
 
     # Output updated catalog
     utils.output_json_catalog(var_catalog, args.catalog)
