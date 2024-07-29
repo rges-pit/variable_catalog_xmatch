@@ -1,0 +1,10 @@
+[project]
+name="variable_catalog_xmatch"
+version="0.1.0"
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+pythonpath = ["."]
+testpaths = [
+    "tests",
+]

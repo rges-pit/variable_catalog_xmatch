@@ -21,8 +21,8 @@ def crossmatch_catalogs(args):
     """
 
     # Load input catalogs, ensuring the coordinates are in a consistent format
-    ogle_catalog = utils.load_json_catalog(args.ogle_cat_file, decimal_degrees=True)
-    vvv_catalog = utils.load_json_catalog(args.vvv_cat_file)
+    ogle_catalog = utils.load_json_catalog_as_table(args.ogle_cat_file, decimal_degrees=True)
+    vvv_catalog = utils.load_json_catalog_as_table(args.vvv_cat_file)
 
     # The OGLE catalog is likely to be the most comprehensive, so we start with this,
     # and crossmatch all other catalogs against it.  To combine the information from

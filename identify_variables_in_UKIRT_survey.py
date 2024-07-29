@@ -26,13 +26,9 @@ def find_ukirt_data_for_variables(args):
     :return: None, outputs updated JSON catalog with lightcurve files where available
     """
 
-    ## NOTE TO SELF
-    ## Also need to write a directory walker to catalog the paths to each lightcurve file,
-    ## since it doesn't relate to the source table
-
     # Load the input catalog of stars to search for.  Add column(s) to store
     # UKIRT cross-matching information
-    var_catalog = utils.load_json_catalog(args.catalog)
+    var_catalog = utils.load_json_catalog_as_table(args.catalog)
     if 'UKIRT_source_table' not in var_catalog.colnames:
         var_catalog.add_column([None] * len(var_catalog), name='UKIRT_source_table')
         var_catalog.add_column([None] * len(var_catalog), name='UKIRT_lc_files')

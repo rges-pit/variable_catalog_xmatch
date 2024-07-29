@@ -40,12 +40,23 @@ def build_index(args):
     for (dirpath, subdirs, files) in walk(args.data_dir):
         if len(files) > 0:
             for f in files:
-                lc_catalog[f] = path.join(dirpath,f)
+                elements = str(f).split('_')
+                yr = elements[2]
+                field = elements[4]
+                cat_id = yr + '_' + field
+                if cat_id not in lc_catalog.keys():
+                    catalog = {}
+                else:
+                    catalog = lc_catalog[cat_id]
+                catalog[f] = path.join(dirpath,f)
+                lc_catalog[cat_id] = catalog
 
     # Output the catalog
-    json_object = json.dumps(lc_catalog, indent=4)
-    with open(args.output_file, "w") as outfile:
-        outfile.write(json_object)
+    for cat_id, catalog in lc_catalog.items():
+        json_object = json.dumps(catalog, indent=4)
+        filename = args.output_file.replace('.json', '_' + cat_id + '.json')
+        with open(args.output_file, "w") as outfile:
+            outfile.write(json_object)
 
 def get_args():
     parser = argparse.ArgumentParser()
