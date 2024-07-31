@@ -45,7 +45,7 @@ def build_lut(args):
         lut['dec_max'][i] = source_table['dec'].max()
 
     # Output the LUT
-    utils.output_json_catalog(lut, args.lut_file)
+    utils.output_json_catalog_from_table(lut, args.lut_file)
 
 def get_args():
 

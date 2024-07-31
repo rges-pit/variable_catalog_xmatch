@@ -37,7 +37,7 @@ def find_variables_in_fov(catalog, coord_type='sexigesimal'):
 
     return survey_catalog
 
-def output_json_catalog(catalog, output_file):
+def output_json_catalog_from_table(catalog, output_file):
     """
     Function to output a catalog of data from an astropy Table to a JSON-format
     file.
@@ -56,8 +56,22 @@ def output_json_catalog(catalog, output_file):
     for row in catalog:
         dictionary[row[key]] = {col: row[col] for col in columns}
 
+    output_json_catalog_from_dict(dictionary, output_file)
+
+def output_json_catalog_from_dict(catalog, output_file):
+    """
+    Function to output a catalog of data from an astropy Table to a JSON-format
+    file.
+    The first column of the catalog will be used as the dictionary key for each
+    row and the remaining columns will become sub-dictionary entries.
+
+    :param catalog: dictionary
+    :param output_file: path to output JSON file
+    :return: None
+    """
+
     # Serializing to json
-    json_object = json.dumps(dictionary, indent=4)
+    json_object = json.dumps(catalog, indent=4)
 
     # Output to file
     with open(output_file, "w") as outfile:
@@ -292,28 +306,9 @@ def load_ukirt_index(file_path):
     with open(file_path, 'r') as f:
         json_object = json.loads(f.read())
 
-    # lc_filenames = []
-    # lc_paths = []
-    # for j, key, entry in enumerate(json_object.items()):
-    #     if j%1000 == 0:
-    #         print('Reading star ' + str(j))
-    #
-    #     lc_filenames.append(key)
-    #     lc_paths.append(entry)
-    #
-    # # Reformat the output into a Table for ease of handling
-    # lc_index = Table([
-    #     Column(name='filename', data=lc_filenames),
-    #     Column(name='path', data=lc_paths)
-    # ])
-    #
-    # print('Loaded ' + str(len(lc_index)) + ' entries from catalog '
-    #       + path.basename(file_path))
-    print(json_object)
+    return json_object
 
-    return lc_index
-
-def fetch_ogle_photometry(star):
+def fetch_ogle_photometry(star_id, star_data):
     """
     Function to retrieve the OGLE timeseries photometry in multiple passbands
     for a given star in the survey's variable star catalog.  The data, if available,
@@ -321,8 +316,8 @@ def fetch_ogle_photometry(star):
     https://www.astrouw.edu.pl/ogle/ogle4/OCVS/blg/
     (note this URL is specific to the Galactic Bulge fields, suitable for RGES)
 
-    :param star: Table row entry from the variable catalog including the
-                essential information for a single star
+    :param star_id: Star identifier string
+    :param star_data: Dictionary of star attributes
     :return:
         ilc Table or None : Timeseries photometry in I-band
         vlc Table or None : Timeseries photometry in V-band
@@ -336,17 +331,17 @@ def fetch_ogle_photometry(star):
     # However, the exact path to the photometry directories seems to vary
     # depending on the variability type.  Here we effectively skip variable
     # types that are unsupported.
-    if star['Type'][0] == 'cephied':
+    if star_data['Type'] == 'cephied':
         phot_dir = 'cep/phot'
-    elif star['Type'][0] == 'lpv':
+    elif star_data['Type'] == 'lpv':
         phot_dir = 'lpv/phot_ogle4'
-    elif star['Type'][0] == 'delta_scuti':
+    elif star_data['Type'] == 'delta_scuti':
         phot_dir = 'dsct/phot_ogle4'
-    elif star['Type'][0] == 'eclipsing_binary':
+    elif star_data['Type'] == 'eclipsing_binary':
         phot_dir = 'ecl/phot_ogle4'
-    elif star['Type'][0] == 'hb':
+    elif star_data['Type'] == 'hb':
         phot_dir = 'hb/phot'
-    elif star['Type'][0] == 'rrlyrae':
+    elif star_data['Type'] == 'rrlyrae':
         phot_dir = 'rrlyr/phot'
     else:
         phot_dir = ''
@@ -354,12 +349,12 @@ def fetch_ogle_photometry(star):
     idata_url = path.join(
         ARCHIVE_ROOT,
         phot_dir, 'I',
-        star['Name'][0]+'.dat'
+        star_id+'.dat'
     )
     vdata_url = path.join(
         ARCHIVE_ROOT,
         phot_dir, 'V',
-        star['Name'][0]+'.dat'
+        star_id+'.dat'
     )
 
     # Check whether the corresponding lightcurve datafile is available at the
@@ -402,33 +397,33 @@ def parse_ogle_lightcurve(response):
 
     return lc
 
-def fetch_ukirt_photometry(star, ukirt_index):
+def fetch_ukirt_photometry(star_id, star_data, ukirt_index):
     """
     Function to retrieve the UKIRT photometry for a star from a locally-mounted
     filesystem of the timeseries data from the survey.
 
-    :param star: Table row entry from the variable catalog including the
-                essential information for a single star
+    :param star_id: Star identifier string
+    :param star_data: Dictionary of star attributes
     :return: nirlc Table or None : Timeseries photometry from UKIRT
     """
 
-    # A star in the catalog may have zero or one UKIRT catalog entries.
+    # A star in the catalog may have zero, one or multiple UKIRT catalog entries.
     # The UKIRT sourceid can be used to look-up the file path to each
     # lightcurve from the UKIRT index.
-    for usource in star['UKIRT_lc_files']:
+    hband_lc = []
+    kband_lc = []
+    for usource in star_data['UKIRT_lc_files']:
         hid = usource['sourceid'] + '_h_lc.tbl'
         kid = usource['sourceid'] + '_k_lc.tbl'
         if hid in ukirt_index.keys():
             hlc = parse_ukirt_lightcurve(ukirt_index[hid])
-        else:
-            hlc = None
+            hband_lc.append(hlc)
 
         if kid in ukirt_index.keys():
             klc = parse_ukirt_lightcurve(ukirt_index[kid])
-        else:
-            klc = None
+            kband_lc.append(klc)
 
-    return hlc, klc
+    return hband_lc, kband_lc
 
 def parse_ukirt_lightcurve(file_path):
     """
@@ -455,7 +450,7 @@ def parse_ukirt_lightcurve(file_path):
 
             lc = Table(
                 [
-                    Column(name='HJD', data=data[:, 0] + 2450000.0),
+                    Column(name='HJD', data=data[:, 0]),
                     Column(name='mag', data=data[:, 1]),
                     Column(name='mag_error', data=data[:, 2])
                 ]
@@ -466,12 +461,13 @@ def parse_ukirt_lightcurve(file_path):
     else:
         return None
 
-def output_multiband_lc(args, star, photometry):
+def output_multiband_lc(args, star_id, star_data, photometry):
     """
     Function to output multi-band photometry datatables as a multi-extension FITS
     binary table.
 
-    :param star: Table row for a single star from the input catalog
+    :param star_id: Star identifier string
+    :param star_data: Dictionary of star attributes
     :param photometry: dict of available lightcurve data Tables
     :return: None, outputs to FITS file
     """
@@ -480,13 +476,13 @@ def output_multiband_lc(args, star, photometry):
     # for the star, plus information on the data available from the
     # lightcurve tables
     hdr = fits.Header()
-    hdr['NAME'] = star['Name'][0]
-    hdr['RA'] = star['RA'][0]
-    hdr['DEC'] = star['Dec'][0]
-    hdr['VARTYPE'] = star['Type'][0]
+    hdr['NAME'] = star_id
+    hdr['RA'] = star_data['RA']
+    hdr['DEC'] = star_data['Dec']
+    hdr['VARTYPE'] = star_data['Type']
     for f,lc in photometry.items():
         if lc:
-            hdr['NDATA_' + f] = len(lc[f])
+            hdr['NDATA_' + f] = len(lc)
     hdr['VSOURCE'] = 'OGLE'
     hdr['ISOURCE'] = 'OGLE'
     hdr['HSOURCE'] = 'UKIRT'
@@ -502,10 +498,39 @@ def output_multiband_lc(args, star, photometry):
     hdu_list = fits.HDUList(hdu_list)
 
     # Output to disk:
-    file_path = path.join(args.output_dir, star['Name'][0] + '_multiband_lc.fits')
+    file_path = path.join(args.output_dir, star_id + '_multiband_lc.fits')
     if not path.isdir(path.dirname(file_path)):
         makedirs(path.dirname(file_path))
     hdu_list.writeto(file_path, overwrite=True)
 
     return file_path
 
+def load_multiband_lc(file_path):
+    """
+    Function to read a multiband lightcurve file
+
+    :param file_path: String path to input file
+    :return:
+    :param header: Dictionary of lightcurve header parameters
+    :param lightcurves: Dictionary of lightcurves, as astropy Tables
+    """
+
+    if not path.isfile(file_path):
+        raise IOError('Cannot find lightcurve file at ' + file_path)
+
+    with fits.open(file_path) as hdu_list:
+        header = hdu_list[0].header
+        lightcurves = {}
+        for hdu in hdu_list:
+            if 'LIGHTCURVE' in hdu.name:
+                data = [[dp[0], dp[1], dp[2]] for dp in hdu.data]
+                data = np.array(data)
+
+                lc = Table([
+                    Column(name='HJD', data=data[:, 0]),
+                    Column(name='mag', data=data[:, 1]),
+                    Column(name='mag_error', data=data[:, 2])
+                ])
+                lightcurves[hdu.name] = lc
+
+    return header, lightcurves

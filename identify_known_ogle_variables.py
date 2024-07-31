@@ -45,7 +45,7 @@ def find_ogle_variables(args, config):
     survey_catalog = utils.find_variables_in_fov(ogle_catalog, coord_type='sexigesimal')
 
     # Output catalog of known variables within the field
-    utils.output_json_catalog(survey_catalog, args.output_file)
+    utils.output_json_catalog_from_table(survey_catalog, args.output_file)
 
 def load_ogle_variable_catalogs(config):
     """

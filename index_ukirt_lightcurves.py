@@ -39,11 +39,13 @@ def build_index(args):
     lc_catalog = {}
     for (dirpath, subdirs, files) in walk(args.data_dir):
         if len(files) > 0:
+            print('Indexing ' + str(len(files)) + ' files in ' + dirpath)
             for f in files:
                 elements = str(f).split('_')
                 yr = elements[2]
                 field = elements[4]
-                cat_id = yr + '_' + field
+                ccd = elements[5]
+                cat_id = yr + '_' + field + '_' + ccd
                 if cat_id not in lc_catalog.keys():
                     catalog = {}
                 else:
@@ -53,15 +55,17 @@ def build_index(args):
 
     # Output the catalog
     for cat_id, catalog in lc_catalog.items():
+        yr, field, ccd = cat_id.split('_')
         json_object = json.dumps(catalog, indent=4)
-        filename = args.output_file.replace('.json', '_' + cat_id + '.json')
-        with open(args.output_file, "w") as outfile:
+        filename = path.join(args.output_dir,
+                             'UKIRT_year' + yr + '_field' + field + '_ccd' + ccd + '.json')
+        with open(filename, "w") as outfile:
             outfile.write(json_object)
 
 def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('data_dir', help='Top-level directory of UKIRT lightcurve data')
-    parser.add_argument('output_file', help='Path and filename of output catalog')
+    parser.add_argument('output_dir', help='Path for output data')
     args = parser.parse_args()
 
     return args

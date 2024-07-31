@@ -33,6 +33,8 @@ def crossmatch_catalogs(args):
     combined_catalog = copy.deepcopy(ogle_catalog)
     combined_catalog.add_column([None]*len(combined_catalog), name='VVV_ID')
     combined_catalog.add_column([None]*len(combined_catalog), name='VVV_type')
+    combined_catalog.add_column([None]*len(combined_catalog), name='UKIRT_source_table')
+    combined_catalog.add_column([None]*len(combined_catalog), name='UKIRT_lc_files')
     print('Initial catalog has ' + str(len(combined_catalog)) + ' entries from OGLE')
 
     # Cross-match VVV catalog, combining entries if the stars are known to OGLE,
@@ -40,7 +42,7 @@ def crossmatch_catalogs(args):
     merge_catalog(combined_catalog, vvv_catalog, match_radius_arcsec=2.0)
 
     # Output combined catalog
-    utils.output_json_catalog(combined_catalog, args.output_file)
+    utils.output_json_catalog_from_table(combined_catalog, args.output_file)
 
 def merge_catalog(combined_catalog, catalog, match_radius_arcsec=2.0):
     """
@@ -77,7 +79,9 @@ def merge_catalog(combined_catalog, catalog, match_radius_arcsec=2.0):
                 star['RA'],
                 star['Dec'],
                 star['Name'],
-                star['Type']
+                star['Type'],
+                None,           # Null entries for UKIRT cross-matching
+                None
             ])
 
     print('Length of combined catalog after merge: ' + str(len(combined_catalog)))

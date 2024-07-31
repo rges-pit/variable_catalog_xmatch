@@ -37,7 +37,7 @@ def find_vvv_variables(args, config):
     survey_catalog = utils.find_variables_in_fov(vvv_catalog, coord_type='degrees')
 
     # Output catalog of known variables within the field
-    utils.output_json_catalog(survey_catalog, args.output_file)
+    utils.output_json_catalog_from_table(survey_catalog, args.output_file)
 
 
 def load_vvv_variable_catalogs(config):

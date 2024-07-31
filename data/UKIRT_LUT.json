@@ -1,0 +1,2930 @@
+{
+    "UKIRT_year2018_field34_ccd4_md.tbl": {
+        "ra_min": 264.193028,
+        "ra_max": 268.371766,
+        "dec_min": -28.430262,
+        "dec_max": -27.197516
+    },
+    "UKIRT_year2016_field22_ccd4_md.tbl": {
+        "ra_min": 270.825186,
+        "ra_max": 271.080619,
+        "dec_min": -27.439206,
+        "dec_max": -27.212137
+    },
+    "UKIRT_year2016_field83_ccd3_md.tbl": {
+        "ra_min": 268.308136,
+        "ra_max": 268.563366,
+        "dec_min": -27.82003,
+        "dec_max": -27.594046
+    },
+    "UKIRT_year2018_field44_ccd4_md.tbl": {
+        "ra_min": 263.577228,
+        "ra_max": 268.066127,
+        "dec_min": -29.296253,
+        "dec_max": -28.080677
+    },
+    "UKIRT_year2016_field52_ccd4_md.tbl": {
+        "ra_min": 268.802969,
+        "ra_max": 269.060986,
+        "dec_min": -28.740883,
+        "dec_max": -28.512632
+    },
+    "UKIRT_year2016_field73_ccd2_md.tbl": {
+        "ra_min": 268.305841,
+        "ra_max": 268.563776,
+        "dec_min": -29.143683,
+        "dec_max": -28.917894
+    },
+    "UKIRT_year2017_field62_ccd3_md.tbl": {
+        "ra_min": 269.145817,
+        "ra_max": 269.403273,
+        "dec_min": -29.409518,
+        "dec_max": -29.184254
+    },
+    "UKIRT_year2017_field41_ccd2_md.tbl": {
+        "ra_min": 264.074398,
+        "ra_max": 268.571717,
+        "dec_min": -29.956711,
+        "dec_max": -28.740705
+    },
+    "UKIRT_year2018_field43_ccd1_md.tbl": {
+        "ra_min": 263.829171,
+        "ra_max": 268.317315,
+        "dec_min": -29.746765,
+        "dec_max": -28.523671
+    },
+    "UKIRT_year2017_field12_ccd3_md.tbl": {
+        "ra_min": 266.237589,
+        "ra_max": 268.125387,
+        "dec_min": -28.519098,
+        "dec_max": -26.693125
+    },
+    "UKIRT_year2017_field31_ccd2_md.tbl": {
+        "ra_min": 264.686578,
+        "ra_max": 268.873325,
+        "dec_min": -29.091657,
+        "dec_max": -27.857128
+    },
+    "UKIRT_year2016_field81_ccd4_md.tbl": {
+        "ra_min": 267.554984,
+        "ra_max": 267.81057,
+        "dec_min": -28.039277,
+        "dec_max": -27.812033
+    },
+    "UKIRT_year2018_field33_ccd1_md.tbl": {
+        "ra_min": 264.443123,
+        "ra_max": 268.620794,
+        "dec_min": -28.879225,
+        "dec_max": -27.63929
+    },
+    "UKIRT_year2017_field52_ccd4_md.tbl": {
+        "ra_min": 267.627138,
+        "ra_max": 267.884541,
+        "dec_min": -29.412263,
+        "dec_max": -29.186909
+    },
+    "UKIRT_year2019_field44_ccd4_md.tbl": {
+        "ra_min": 266.371913,
+        "ra_max": 268.069543,
+        "dec_min": -29.181109,
+        "dec_max": -28.078946
+    },
+    "UKIRT_year2017_field22_ccd4_md.tbl": {
+        "ra_min": 265.05784,
+        "ra_max": 266.978821,
+        "dec_min": -30.291766,
+        "dec_max": -27.565643
+    },
+    "UKIRT_year2019_field34_ccd4_md.tbl": {
+        "ra_min": 266.813253,
+        "ra_max": 268.373186,
+        "dec_min": -28.302169,
+        "dec_max": -27.195805
+    },
+    "UKIRT_year2016_field31_ccd2_md.tbl": {
+        "ra_min": 270.055817,
+        "ra_max": 270.312468,
+        "dec_min": -29.047299,
+        "dec_max": -28.822405
+    },
+    "UKIRT_year2019_field33_ccd1_md.tbl": {
+        "ra_min": 267.060041,
+        "ra_max": 268.620357,
+        "dec_min": -28.745725,
+        "dec_max": -27.637695
+    },
+    "UKIRT_year2015_field24_ccd2_md.tbl": {
+        "ra_min": 264.52962,
+        "ra_max": 264.785561,
+        "dec_min": -27.77799,
+        "dec_max": -27.551784
+    },
+    "UKIRT_year2016_field12_ccd3_md.tbl": {
+        "ra_min": 271.324374,
+        "ra_max": 271.581517,
+        "dec_min": -28.32692,
+        "dec_max": -28.10009
+    },
+    "UKIRT_year2016_field41_ccd2_md.tbl": {
+        "ra_min": 270.054861,
+        "ra_max": 270.309381,
+        "dec_min": -28.164661,
+        "dec_max": -27.939169
+    },
+    "UKIRT_year2019_field43_ccd1_md.tbl": {
+        "ra_min": 266.620232,
+        "ra_max": 268.31655,
+        "dec_min": -29.625905,
+        "dec_max": -28.52203
+    },
+    "UKIRT_year2016_field62_ccd3_md.tbl": {
+        "ra_min": 269.308103,
+        "ra_max": 269.56252,
+        "dec_min": -27.860393,
+        "dec_max": -27.635048
+    },
+    "UKIRT_year2015_field12_ccd3_md.tbl": {
+        "ra_min": 265.779654,
+        "ra_max": 266.033573,
+        "dec_min": -27.558859,
+        "dec_max": -27.333123
+    },
+    "UKIRT_year2018_field11_ccd3_md.tbl": {
+        "ra_min": 265.990734,
+        "ra_max": 267.877233,
+        "dec_min": -28.51408,
+        "dec_max": -26.687684
+    },
+    "UKIRT_year2016_field24_ccd2_md.tbl": {
+        "ra_min": 271.070045,
+        "ra_max": 271.327789,
+        "dec_min": -27.661421,
+        "dec_max": -27.435073
+    },
+    "UKIRT_year2019_field23_ccd3_md.tbl": {
+        "ra_min": 266.122557,
+        "ra_max": 267.496764,
+        "dec_min": -30.071305,
+        "dec_max": -28.950228
+    },
+    "UKIRT_year2018_field14_ccd1_md.tbl": {
+        "ra_min": 265.501579,
+        "ra_max": 267.380732,
+        "dec_min": -28.732786,
+        "dec_max": -26.908191
+    },
+    "UKIRT_year2015_field31_ccd2_md.tbl": {
+        "ra_min": 264.429654,
+        "ra_max": 264.688436,
+        "dec_min": -28.972935,
+        "dec_max": -28.74747
+    },
+    "UKIRT_year2018_field32_ccd2_md.tbl": {
+        "ra_min": 264.93853,
+        "ra_max": 269.121748,
+        "dec_min": -29.099034,
+        "dec_max": -27.85825
+    },
+    "UKIRT_year2018_field61_ccd3_md.tbl": {
+        "ra_min": 268.893092,
+        "ra_max": 269.150516,
+        "dec_min": -29.409415,
+        "dec_max": -29.18413
+    },
+    "UKIRT_year2016_field54_ccd2_md.tbl": {
+        "ra_min": 269.054129,
+        "ra_max": 269.312528,
+        "dec_min": -29.011983,
+        "dec_max": -28.786529
+    },
+    "UKIRT_year2016_field72_ccd1_md.tbl": {
+        "ra_min": 267.798221,
+        "ra_max": 268.05755,
+        "dec_min": -29.363864,
+        "dec_max": -29.136471
+    },
+    "UKIRT_year2019_field53_ccd3_md.tbl": {
+        "ra_min": 268.138856,
+        "ra_max": 268.396136,
+        "dec_min": -29.192205,
+        "dec_max": -28.967823
+    },
+    "UKIRT_year2018_field64_ccd1_md.tbl": {
+        "ra_min": 268.385043,
+        "ra_max": 268.643607,
+        "dec_min": -29.629204,
+        "dec_max": -29.403838
+    },
+    "UKIRT_year2018_field42_ccd2_md.tbl": {
+        "ra_min": 264.327119,
+        "ra_max": 268.822094,
+        "dec_min": -29.966359,
+        "dec_max": -28.742478
+    },
+    "UKIRT_year2015_field41_ccd2_md.tbl": {
+        "ra_min": 263.852694,
+        "ra_max": 264.114044,
+        "dec_min": -30.023381,
+        "dec_max": -29.797107
+    },
+    "UKIRT_year2018_field63_ccd4_md.tbl": {
+        "ra_min": 268.63828,
+        "ra_max": 268.898073,
+        "dec_min": -29.188147,
+        "dec_max": -28.96355
+    },
+    "UKIRT_year2019_field51_ccd4_md.tbl": {
+        "ra_min": 267.36628,
+        "ra_max": 267.633258,
+        "dec_min": -29.408657,
+        "dec_max": -29.18309
+    },
+    "UKIRT_year2018_field13_ccd4_md.tbl": {
+        "ra_min": 265.748345,
+        "ra_max": 267.628969,
+        "dec_min": -28.296386,
+        "dec_max": -26.473178
+    },
+    "UKIRT_year2019_field21_ccd4_md.tbl": {
+        "ra_min": 265.35468,
+        "ra_max": 266.725249,
+        "dec_min": -30.286804,
+        "dec_max": -29.162463
+    },
+    "UKIRT_year2018_field53_ccd3_md.tbl": {
+        "ra_min": 268.137927,
+        "ra_max": 268.394949,
+        "dec_min": -29.191542,
+        "dec_max": -28.966123
+    },
+    "UKIRT_year2019_field42_ccd2_md.tbl": {
+        "ra_min": 267.125119,
+        "ra_max": 268.820072,
+        "dec_min": -29.847196,
+        "dec_max": -28.744128
+    },
+    "UKIRT_year2019_field64_ccd1_md.tbl": {
+        "ra_min": 268.382093,
+        "ra_max": 268.642842,
+        "dec_min": -29.627847,
+        "dec_max": -29.402059
+    },
+    "UKIRT_year2019_field61_ccd3_md.tbl": {
+        "ra_min": 268.894466,
+        "ra_max": 269.151691,
+        "dec_min": -29.41018,
+        "dec_max": -29.185849
+    },
+    "UKIRT_year2017_field54_ccd2_md.tbl": {
+        "ra_min": 267.885702,
+        "ra_max": 268.145452,
+        "dec_min": -29.627834,
+        "dec_max": -29.402755
+    },
+    "UKIRT_year2018_field23_ccd3_md.tbl": {
+        "ra_min": 265.566375,
+        "ra_max": 267.495725,
+        "dec_min": -30.070732,
+        "dec_max": -27.344596
+    },
+    "UKIRT_year2015_field6_ccd4_md.tbl": {
+        "ra_min": 263.267866,
+        "ra_max": 263.521156,
+        "dec_min": -27.111308,
+        "dec_max": -26.88456
+    },
+    "UKIRT_year2019_field32_ccd2_md.tbl": {
+        "ra_min": 267.560913,
+        "ra_max": 269.120245,
+        "dec_min": -28.967338,
+        "dec_max": -27.860058
+    },
+    "UKIRT_year2019_field14_ccd1_md.tbl": {
+        "ra_min": 265.80957,
+        "ra_max": 267.380678,
+        "dec_min": -28.731887,
+        "dec_max": -27.635242
+    },
+    "UKIRT_year2019_field11_ccd3_md.tbl": {
+        "ra_min": 266.311097,
+        "ra_max": 267.878141,
+        "dec_min": -28.514742,
+        "dec_max": -27.418319
+    },
+    "UKIRT_year2017_field24_ccd2_md.tbl": {
+        "ra_min": 265.317742,
+        "ra_max": 267.244238,
+        "dec_min": -30.506142,
+        "dec_max": -27.776688
+    },
+    "UKIRT_year2015_field22_ccd4_md.tbl": {
+        "ra_min": 264.279553,
+        "ra_max": 264.534429,
+        "dec_min": -27.555567,
+        "dec_max": -27.330024
+    },
+    "UKIRT_year2018_field21_ccd4_md.tbl": {
+        "ra_min": 264.809275,
+        "ra_max": 266.72381,
+        "dec_min": -30.287043,
+        "dec_max": -27.558555
+    },
+    "UKIRT_year2019_field13_ccd4_md.tbl": {
+        "ra_min": 266.05961,
+        "ra_max": 267.630499,
+        "dec_min": -28.29702,
+        "dec_max": -27.197254
+    },
+    "UKIRT_year2018_field51_ccd4_md.tbl": {
+        "ra_min": 267.374756,
+        "ra_max": 267.632165,
+        "dec_min": -29.409271,
+        "dec_max": -29.184726
+    },
+    "UKIRT_year2019_field63_ccd4_md.tbl": {
+        "ra_min": 268.639509,
+        "ra_max": 268.898073,
+        "dec_min": -29.187222,
+        "dec_max": -28.961501
+    },
+    "UKIRT_year2019_field24_ccd4_md.tbl": {
+        "ra_min": 265.36334,
+        "ra_max": 266.730457,
+        "dec_min": -30.066353,
+        "dec_max": -28.941455
+    },
+    "UKIRT_year2017_field32_ccd4_md.tbl": {
+        "ra_min": 264.433533,
+        "ra_max": 268.618824,
+        "dec_min": -28.659262,
+        "dec_max": -27.419412
+    },
+    "UKIRT_year2016_field82_ccd2_md.tbl": {
+        "ra_min": 268.305048,
+        "ra_max": 268.562628,
+        "dec_min": -28.481663,
+        "dec_max": -28.255229
+    },
+    "UKIRT_year2019_field54_ccd4_md.tbl": {
+        "ra_min": 267.379585,
+        "ra_max": 267.636333,
+        "dec_min": -29.187338,
+        "dec_max": -28.961996
+    },
+    "UKIRT_year2017_field42_ccd4_md.tbl": {
+        "ra_min": 263.817996,
+        "ra_max": 268.318053,
+        "dec_min": -29.526594,
+        "dec_max": -28.300336
+    },
+    "UKIRT_year2017_field63_ccd2_md.tbl": {
+        "ra_min": 269.143194,
+        "ra_max": 269.408561,
+        "dec_min": -29.627981,
+        "dec_max": -29.400689
+    },
+    "UKIRT_year2018_field61_ccd1_md.tbl": {
+        "ra_min": 268.383978,
+        "ra_max": 268.642432,
+        "dec_min": -29.8493,
+        "dec_max": -29.625208
+    },
+    "UKIRT_year2015_field44_ccd2_md.tbl": {
+        "ra_min": 263.599731,
+        "ra_max": 263.861846,
+        "dec_min": -30.02323,
+        "dec_max": -29.797578
+    },
+    "UKIRT_year2016_field72_ccd3_md.tbl": {
+        "ra_min": 268.309338,
+        "ra_max": 268.566214,
+        "dec_min": -28.926391,
+        "dec_max": -28.70017
+    },
+    "UKIRT_year2018_field64_ccd3_md.tbl": {
+        "ra_min": 268.892854,
+        "ra_max": 269.150598,
+        "dec_min": -29.189309,
+        "dec_max": -28.962584
+    },
+    "UKIRT_year2016_field51_ccd2_md.tbl": {
+        "ra_min": 269.052162,
+        "ra_max": 269.313649,
+        "dec_min": -29.232772,
+        "dec_max": -29.006753
+    },
+    "UKIRT_year2019_field53_ccd1_md.tbl": {
+        "ra_min": 267.627493,
+        "ra_max": 267.887188,
+        "dec_min": -29.630185,
+        "dec_max": -29.405677
+    },
+    "UKIRT_year2017_field13_ccd2_md.tbl": {
+        "ra_min": 266.244362,
+        "ra_max": 268.131042,
+        "dec_min": -28.736628,
+        "dec_max": -26.910903
+    },
+    "UKIRT_year2015_field12_ccd1_md.tbl": {
+        "ra_min": 265.276433,
+        "ra_max": 265.53292,
+        "dec_min": -27.996882,
+        "dec_max": -27.770878
+    },
+    "UKIRT_year2018_field11_ccd1_md.tbl": {
+        "ra_min": 265.494261,
+        "ra_max": 267.377399,
+        "dec_min": -28.954145,
+        "dec_max": -27.128885
+    },
+    "UKIRT_year2015_field34_ccd2_md.tbl": {
+        "ra_min": 264.179614,
+        "ra_max": 264.438779,
+        "dec_min": -28.972959,
+        "dec_max": -28.747662
+    },
+    "UKIRT_year2018_field14_ccd3_md.tbl": {
+        "ra_min": 265.997182,
+        "ra_max": 267.879345,
+        "dec_min": -28.293044,
+        "dec_max": -26.467149
+    },
+    "UKIRT_year2016_field21_ccd2_md.tbl": {
+        "ra_min": 271.070264,
+        "ra_max": 271.325713,
+        "dec_min": -27.881177,
+        "dec_max": -27.655721
+    },
+    "UKIRT_year2019_field23_ccd1_md.tbl": {
+        "ra_min": 265.611304,
+        "ra_max": 266.983429,
+        "dec_min": -30.509377,
+        "dec_max": -29.387965
+    },
+    "UKIRT_year2016_field42_ccd4_md.tbl": {
+        "ra_min": 269.806679,
+        "ra_max": 270.062155,
+        "dec_min": -27.724947,
+        "dec_max": -27.49521
+    },
+    "UKIRT_year2018_field54_ccd4_md.tbl": {
+        "ra_min": 267.378383,
+        "ra_max": 267.635034,
+        "dec_min": -29.188011,
+        "dec_max": -28.963786
+    },
+    "UKIRT_year2016_field32_ccd4_md.tbl": {
+        "ra_min": 269.80239,
+        "ra_max": 270.061363,
+        "dec_min": -28.605754,
+        "dec_max": -28.378626
+    },
+    "UKIRT_year2018_field24_ccd4_md.tbl": {
+        "ra_min": 264.817991,
+        "ra_max": 266.729019,
+        "dec_min": -30.066025,
+        "dec_max": -27.337953
+    },
+    "UKIRT_year2019_field14_ccd3_md.tbl": {
+        "ra_min": 266.316698,
+        "ra_max": 267.881249,
+        "dec_min": -28.29398,
+        "dec_max": -27.197431
+    },
+    "UKIRT_year2017_field21_ccd2_md.tbl": {
+        "ra_min": 265.310038,
+        "ra_max": 267.240358,
+        "dec_min": -30.726777,
+        "dec_max": -27.997283
+    },
+    "UKIRT_year2018_field23_ccd1_md.tbl": {
+        "ra_min": 265.06676,
+        "ra_max": 266.984363,
+        "dec_min": -30.510672,
+        "dec_max": -27.785462
+    },
+    "UKIRT_year2016_field13_ccd2_md.tbl": {
+        "ra_min": 271.320959,
+        "ra_max": 271.579987,
+        "dec_min": -28.543857,
+        "dec_max": -28.316153
+    },
+    "UKIRT_year2019_field11_ccd1_md.tbl": {
+        "ra_min": 265.802604,
+        "ra_max": 267.376607,
+        "dec_min": -28.952639,
+        "dec_max": -27.856111
+    },
+    "UKIRT_year2019_field64_ccd3_md.tbl": {
+        "ra_min": 268.894384,
+        "ra_max": 269.151623,
+        "dec_min": -29.189951,
+        "dec_max": -28.964349
+    },
+    "UKIRT_year2017_field51_ccd2_md.tbl": {
+        "ra_min": 267.883254,
+        "ra_max": 268.143719,
+        "dec_min": -29.84888,
+        "dec_max": -29.623661
+    },
+    "UKIRT_year2018_field53_ccd1_md.tbl": {
+        "ra_min": 267.630267,
+        "ra_max": 267.888079,
+        "dec_min": -29.631407,
+        "dec_max": -29.4073
+    },
+    "UKIRT_year2016_field63_ccd2_md.tbl": {
+        "ra_min": 269.305562,
+        "ra_max": 269.561147,
+        "dec_min": -28.07732,
+        "dec_max": -27.852347
+    },
+    "UKIRT_year2019_field61_ccd1_md.tbl": {
+        "ra_min": 268.381874,
+        "ra_max": 268.641684,
+        "dec_min": -29.84822,
+        "dec_max": -29.623289
+    },
+    "UKIRT_year2017_field34_ccd2_md.tbl": {
+        "ra_min": 264.696646,
+        "ra_max": 268.87403,
+        "dec_min": -28.870116,
+        "dec_max": -27.635727
+    },
+    "UKIRT_year2017_field12_ccd1_md.tbl": {
+        "ra_min": 265.740995,
+        "ra_max": 267.625854,
+        "dec_min": -28.959094,
+        "dec_max": -27.13428
+    },
+    "UKIRT_year2016_field84_ccd4_md.tbl": {
+        "ra_min": 267.556722,
+        "ra_max": 267.810603,
+        "dec_min": -27.817709,
+        "dec_max": -27.591053
+    },
+    "UKIRT_year2015_field13_ccd2_md.tbl": {
+        "ra_min": 265.529888,
+        "ra_max": 265.786129,
+        "dec_min": -27.99735,
+        "dec_max": -27.772662
+    },
+    "UKIRT_year2018_field33_ccd3_md.tbl": {
+        "ra_min": 264.946835,
+        "ra_max": 269.119398,
+        "dec_min": -28.439262,
+        "dec_max": -27.19811
+    },
+    "UKIRT_year2019_field22_ccd2_md.tbl": {
+        "ra_min": 266.114661,
+        "ra_max": 267.493075,
+        "dec_min": -30.731897,
+        "dec_max": -29.610964
+    },
+    "UKIRT_year2017_field44_ccd2_md.tbl": {
+        "ra_min": 264.085102,
+        "ra_max": 268.573966,
+        "dec_min": -29.736171,
+        "dec_max": -28.519667
+    },
+    "UKIRT_year2017_field62_ccd1_md.tbl": {
+        "ra_min": 268.636859,
+        "ra_max": 268.895259,
+        "dec_min": -29.849384,
+        "dec_max": -29.625257
+    },
+    "UKIRT_year2018_field43_ccd3_md.tbl": {
+        "ra_min": 264.337227,
+        "ra_max": 268.820004,
+        "dec_min": -29.30675,
+        "dec_max": -28.082542
+    },
+    "UKIRT_year2019_field52_ccd2_md.tbl": {
+        "ra_min": 268.125496,
+        "ra_max": 268.394742,
+        "dec_min": -29.853083,
+        "dec_max": -29.627503
+    },
+    "UKIRT_year2015_field42_ccd4_md.tbl": {
+        "ra_min": 263.344118,
+        "ra_max": 263.604977,
+        "dec_min": -29.801358,
+        "dec_max": -29.574934
+    },
+    "UKIRT_year2018_field41_ccd4_md.tbl": {
+        "ra_min": 263.565334,
+        "ra_max": 268.064489,
+        "dec_min": -29.516878,
+        "dec_max": -28.301712
+    },
+    "UKIRT_year2016_field83_ccd1_md.tbl": {
+        "ra_min": 267.80229,
+        "ra_max": 268.0602,
+        "dec_min": -28.257268,
+        "dec_max": -28.030354
+    },
+    "UKIRT_year2018_field31_ccd4_md.tbl": {
+        "ra_min": 264.182729,
+        "ra_max": 268.370318,
+        "dec_min": -28.651035,
+        "dec_max": -27.418292
+    },
+    "UKIRT_year2015_field32_ccd4_md.tbl": {
+        "ra_min": 263.926897,
+        "ra_max": 264.185761,
+        "dec_min": -28.751637,
+        "dec_max": -28.525206
+    },
+    "UKIRT_year2019_field43_ccd3_md.tbl": {
+        "ra_min": 267.130829,
+        "ra_max": 268.821247,
+        "dec_min": -29.187512,
+        "dec_max": -28.084254
+    },
+    "UKIRT_year2018_field52_ccd2_md.tbl": {
+        "ra_min": 268.135742,
+        "ra_max": 268.396108,
+        "dec_min": -29.851612,
+        "dec_max": -29.625741
+    },
+    "UKIRT_year2016_field62_ccd1_md.tbl": {
+        "ra_min": 268.802559,
+        "ra_max": 269.05899,
+        "dec_min": -28.297691,
+        "dec_max": -28.071315
+    },
+    "UKIRT_year2016_field44_ccd2_md.tbl": {
+        "ra_min": 270.053112,
+        "ra_max": 270.30908,
+        "dec_min": -27.943567,
+        "dec_max": -27.717813
+    },
+    "UKIRT_year2019_field33_ccd3_md.tbl": {
+        "ra_min": 267.567142,
+        "ra_max": 269.120873,
+        "dec_min": -28.307758,
+        "dec_max": -27.199944
+    },
+    "UKIRT_year2018_field22_ccd2_md.tbl": {
+        "ra_min": 265.558848,
+        "ra_max": 267.49517,
+        "dec_min": -30.730735,
+        "dec_max": -28.004413
+    },
+    "UKIRT_year2015_field21_ccd2_md.tbl": {
+        "ra_min": 264.775835,
+        "ra_max": 265.032964,
+        "dec_min": -27.778383,
+        "dec_max": -27.553023
+    },
+    "UKIRT_year2016_field12_ccd1_md.tbl": {
+        "ra_min": 270.816563,
+        "ra_max": 271.076165,
+        "dec_min": -28.764263,
+        "dec_max": -28.536293
+    },
+    "UKIRT_year2016_field34_ccd2_md.tbl": {
+        "ra_min": 270.05553,
+        "ra_max": 270.312086,
+        "dec_min": -28.826783,
+        "dec_max": -28.601952
+    },
+    "UKIRT_year2015_field5_ccd2_md.tbl": {
+        "ra_min": 263.763,
+        "ra_max": 264.019842,
+        "dec_min": -27.773767,
+        "dec_max": -27.547845
+    },
+    "UKIRT_year2019_field31_ccd4_md.tbl": {
+        "ra_min": 266.807843,
+        "ra_max": 268.371957,
+        "dec_min": -28.522503,
+        "dec_max": -27.416677
+    },
+    "UKIRT_year2019_field41_ccd4_md.tbl": {
+        "ra_min": 266.365411,
+        "ra_max": 268.065773,
+        "dec_min": -29.401714,
+        "dec_max": -28.299968
+    },
+    "UKIRT_year2017_field24_ccd4_md.tbl": {
+        "ra_min": 264.8178,
+        "ra_max": 266.72916,
+        "dec_min": -30.066588,
+        "dec_max": -27.337877
+    },
+    "UKIRT_year2019_field32_ccd4_md.tbl": {
+        "ra_min": 267.059085,
+        "ra_max": 268.620849,
+        "dec_min": -28.526256,
+        "dec_max": -27.417537
+    },
+    "UKIRT_year2015_field6_ccd2_md.tbl": {
+        "ra_min": 263.763464,
+        "ra_max": 264.018274,
+        "dec_min": -27.552534,
+        "dec_max": -27.326915
+    },
+    "UKIRT_year2017_field54_ccd4_md.tbl": {
+        "ra_min": 267.378356,
+        "ra_max": 267.635061,
+        "dec_min": -29.188021,
+        "dec_max": -28.963844
+    },
+    "UKIRT_year2019_field42_ccd4_md.tbl": {
+        "ra_min": 266.618811,
+        "ra_max": 268.316509,
+        "dec_min": -29.405945,
+        "dec_max": -28.301652
+    },
+    "UKIRT_year2019_field63_ccd2_md.tbl": {
+        "ra_min": 269.144588,
+        "ra_max": 269.406211,
+        "dec_min": -29.628503,
+        "dec_max": -29.403585
+    },
+    "UKIRT_year2016_field61_ccd1_md.tbl": {
+        "ra_min": 268.551431,
+        "ra_max": 268.809389,
+        "dec_min": -28.347734,
+        "dec_max": -28.121079
+    },
+    "UKIRT_year2018_field51_ccd2_md.tbl": {
+        "ra_min": 267.883254,
+        "ra_max": 268.143747,
+        "dec_min": -29.849091,
+        "dec_max": -29.623763
+    },
+    "UKIRT_year2016_field64_ccd3_md.tbl": {
+        "ra_min": 269.057626,
+        "ra_max": 269.311135,
+        "dec_min": -27.689618,
+        "dec_max": -27.464389
+    },
+    "UKIRT_year2017_field53_ccd1_md.tbl": {
+        "ra_min": 267.629843,
+        "ra_max": 267.889527,
+        "dec_min": -29.631409,
+        "dec_max": -29.405552
+    },
+    "UKIRT_year2019_field13_ccd2_md.tbl": {
+        "ra_min": 266.560591,
+        "ra_max": 268.12913,
+        "dec_min": -28.738243,
+        "dec_max": -27.63965
+    },
+    "UKIRT_year2016_field11_ccd1_md.tbl": {
+        "ra_min": 270.565158,
+        "ra_max": 270.824732,
+        "dec_min": -28.762476,
+        "dec_max": -28.536329
+    },
+    "UKIRT_year2015_field22_ccd2_md.tbl": {
+        "ra_min": 264.77731,
+        "ra_max": 265.033879,
+        "dec_min": -27.996756,
+        "dec_max": -27.772195
+    },
+    "UKIRT_year2018_field21_ccd2_md.tbl": {
+        "ra_min": 265.310092,
+        "ra_max": 267.240331,
+        "dec_min": -30.727672,
+        "dec_max": -27.99735
+    },
+    "UKIRT_year2016_field14_ccd3_md.tbl": {
+        "ra_min": 271.073269,
+        "ra_max": 271.32992,
+        "dec_min": -28.105288,
+        "dec_max": -27.879429
+    },
+    "UKIRT_year2017_field23_ccd1_md.tbl": {
+        "ra_min": 265.065134,
+        "ra_max": 266.984418,
+        "dec_min": -30.511001,
+        "dec_max": -27.785174
+    },
+    "UKIRT_year2018_field42_ccd4_md.tbl": {
+        "ra_min": 263.818078,
+        "ra_max": 268.315266,
+        "dec_min": -29.52657,
+        "dec_max": -28.303462
+    },
+    "UKIRT_year2015_field41_ccd4_md.tbl": {
+        "ra_min": 263.345511,
+        "ra_max": 263.60514,
+        "dec_min": -29.582311,
+        "dec_max": -29.354802
+    },
+    "UKIRT_year2016_field54_ccd4_md.tbl": {
+        "ra_min": 268.552328,
+        "ra_max": 268.810127,
+        "dec_min": -28.570032,
+        "dec_max": -28.342674
+    },
+    "UKIRT_year2015_field31_ccd4_md.tbl": {
+        "ra_min": 263.92758,
+        "ra_max": 264.184668,
+        "dec_min": -28.53187,
+        "dec_max": -28.305463
+    },
+    "UKIRT_year2018_field32_ccd4_md.tbl": {
+        "ra_min": 264.433697,
+        "ra_max": 268.618813,
+        "dec_min": -28.659255,
+        "dec_max": -27.419374
+    },
+    "UKIRT_year2016_field24_ccd4_md.tbl": {
+        "ra_min": 270.574775,
+        "ra_max": 270.832027,
+        "dec_min": -27.219158,
+        "dec_max": -26.991357
+    },
+    "UKIRT_year2019_field21_ccd2_md.tbl": {
+        "ra_min": 265.860851,
+        "ra_max": 267.238012,
+        "dec_min": -30.727956,
+        "dec_max": -29.604943
+    },
+    "UKIRT_year2017_field14_ccd3_md.tbl": {
+        "ra_min": 265.997051,
+        "ra_max": 267.880074,
+        "dec_min": -28.293615,
+        "dec_max": -26.466884
+    },
+    "UKIRT_year2016_field23_ccd1_md.tbl": {
+        "ra_min": 270.821208,
+        "ra_max": 271.076876,
+        "dec_min": -27.658224,
+        "dec_max": -27.431715
+    },
+    "UKIRT_year2015_field33_ccd3_md.tbl": {
+        "ra_min": 264.181526,
+        "ra_max": 264.439325,
+        "dec_min": -28.754895,
+        "dec_max": -28.528319
+    },
+    "UKIRT_year2018_field13_ccd2_md.tbl": {
+        "ra_min": 266.244353,
+        "ra_max": 268.131042,
+        "dec_min": -28.73627,
+        "dec_max": -26.911874
+    },
+    "UKIRT_year2017_field11_ccd1_md.tbl": {
+        "ra_min": 265.493961,
+        "ra_max": 267.377973,
+        "dec_min": -28.953595,
+        "dec_max": -27.128834
+    },
+    "UKIRT_year2019_field51_ccd2_md.tbl": {
+        "ra_min": 267.872643,
+        "ra_max": 268.141643,
+        "dec_min": -29.849805,
+        "dec_max": -29.625565
+    },
+    "UKIRT_year2017_field64_ccd3_md.tbl": {
+        "ra_min": 268.892882,
+        "ra_max": 269.150462,
+        "dec_min": -29.189336,
+        "dec_max": -28.962594
+    },
+    "UKIRT_year2016_field53_ccd1_md.tbl": {
+        "ra_min": 268.796658,
+        "ra_max": 269.061246,
+        "dec_min": -28.960883,
+        "dec_max": -28.73034
+    },
+    "UKIRT_year2015_field43_ccd3_md.tbl": {
+        "ra_min": 263.601097,
+        "ra_max": 263.862065,
+        "dec_min": -29.803735,
+        "dec_max": -29.578322
+    },
+    "UKIRT_year2018_field63_ccd2_md.tbl": {
+        "ra_min": 269.144479,
+        "ra_max": 269.408342,
+        "dec_min": -29.628305,
+        "dec_max": -29.402434
+    },
+    "UKIRT_year2017_field61_ccd1_md.tbl": {
+        "ra_min": 268.384196,
+        "ra_max": 268.64246,
+        "dec_min": -29.849313,
+        "dec_max": -29.625281
+    },
+    "UKIRT_year2019_field34_ccd2_md.tbl": {
+        "ra_min": 267.314206,
+        "ra_max": 268.871653,
+        "dec_min": -28.743468,
+        "dec_max": -27.638226
+    },
+    "UKIRT_year2019_field12_ccd1_md.tbl": {
+        "ra_min": 266.053681,
+        "ra_max": 267.625144,
+        "dec_min": -28.957666,
+        "dec_max": -27.859205
+    },
+    "UKIRT_year2015_field23_ccd1_md.tbl": {
+        "ra_min": 264.028612,
+        "ra_max": 264.2857,
+        "dec_min": -27.996546,
+        "dec_max": -27.771077
+    },
+    "UKIRT_year2016_field33_ccd3_md.tbl": {
+        "ra_min": 270.304982,
+        "ra_max": 270.56748,
+        "dec_min": -28.387277,
+        "dec_max": -28.159547
+    },
+    "UKIRT_year2017_field22_ccd2_md.tbl": {
+        "ra_min": 265.558766,
+        "ra_max": 267.495179,
+        "dec_min": -30.73136,
+        "dec_max": -28.004413
+    },
+    "UKIRT_year2019_field44_ccd2_md.tbl": {
+        "ra_min": 266.877132,
+        "ra_max": 268.57189,
+        "dec_min": -29.622431,
+        "dec_max": -28.521391
+    },
+    "UKIRT_year2019_field62_ccd1_md.tbl": {
+        "ra_min": 268.634591,
+        "ra_max": 268.894248,
+        "dec_min": -29.848207,
+        "dec_max": -29.623708
+    },
+    "UKIRT_year2016_field43_ccd3_md.tbl": {
+        "ra_min": 270.305255,
+        "ra_max": 270.561606,
+        "dec_min": -27.505428,
+        "dec_max": -27.278959
+    },
+    "UKIRT_year2017_field52_ccd2_md.tbl": {
+        "ra_min": 268.135414,
+        "ra_max": 268.396115,
+        "dec_min": -29.851735,
+        "dec_max": -29.625662
+    },
+    "UKIRT_year2016_field41_ccd4_md.tbl": {
+        "ra_min": 269.557104,
+        "ra_max": 269.810804,
+        "dec_min": -27.722564,
+        "dec_max": -27.495333
+    },
+    "UKIRT_year2015_field24_ccd4_md.tbl": {
+        "ra_min": 264.032983,
+        "ra_max": 264.287312,
+        "dec_min": -27.336814,
+        "dec_max": -27.10955
+    },
+    "UKIRT_year2016_field31_ccd4_md.tbl": {
+        "ra_min": 269.553907,
+        "ra_max": 269.809739,
+        "dec_min": -28.605338,
+        "dec_max": -28.378847
+    },
+    "UKIRT_year2017_field43_ccd3_md.tbl": {
+        "ra_min": 264.336599,
+        "ra_max": 268.81999,
+        "dec_min": -29.30717,
+        "dec_max": -28.082544
+    },
+    "UKIRT_year2016_field52_ccd2_md.tbl": {
+        "ra_min": 269.305425,
+        "ra_max": 269.564235,
+        "dec_min": -29.182902,
+        "dec_max": -28.95644
+    },
+    "UKIRT_year2016_field74_ccd1_md.tbl": {
+        "ra_min": 267.547662,
+        "ra_max": 267.808193,
+        "dec_min": -29.142214,
+        "dec_max": -28.915394
+    },
+    "UKIRT_year2018_field62_ccd1_md.tbl": {
+        "ra_min": 268.636777,
+        "ra_max": 268.895218,
+        "dec_min": -29.849385,
+        "dec_max": -29.625297
+    },
+    "UKIRT_year2016_field71_ccd3_md.tbl": {
+        "ra_min": 268.058014,
+        "ra_max": 268.316222,
+        "dec_min": -28.925544,
+        "dec_max": -28.700284
+    },
+    "UKIRT_year2018_field44_ccd2_md.tbl": {
+        "ra_min": 264.0852,
+        "ra_max": 268.572259,
+        "dec_min": -29.736038,
+        "dec_max": -28.51983
+    },
+    "UKIRT_year2017_field33_ccd3_md.tbl": {
+        "ra_min": 264.946754,
+        "ra_max": 269.119398,
+        "dec_min": -28.439357,
+        "dec_max": -27.19811
+    },
+    "UKIRT_year2015_field14_ccd3_md.tbl": {
+        "ra_min": 265.5315,
+        "ra_max": 265.785299,
+        "dec_min": -27.338583,
+        "dec_max": -27.113092
+    },
+    "UKIRT_year2016_field22_ccd2_md.tbl": {
+        "ra_min": 271.321615,
+        "ra_max": 271.577884,
+        "dec_min": -27.881233,
+        "dec_max": -27.655826
+    },
+    "UKIRT_year2018_field12_ccd1_md.tbl": {
+        "ra_min": 265.740995,
+        "ra_max": 267.625854,
+        "dec_min": -28.958336,
+        "dec_max": -27.134333
+    },
+    "UKIRT_year2015_field11_ccd1_md.tbl": {
+        "ra_min": 265.276624,
+        "ra_max": 265.532565,
+        "dec_min": -27.77667,
+        "dec_max": -27.551496
+    },
+    "UKIRT_year2018_field34_ccd2_md.tbl": {
+        "ra_min": 264.696769,
+        "ra_max": 268.873602,
+        "dec_min": -28.870103,
+        "dec_max": -27.636518
+    },
+    "UKIRT_year2017_field31_ccd4_md.tbl": {
+        "ra_min": 264.182565,
+        "ra_max": 268.370315,
+        "dec_min": -28.651479,
+        "dec_max": -27.418439
+    },
+    "UKIRT_year2016_field81_ccd2_md.tbl": {
+        "ra_min": 268.054162,
+        "ra_max": 268.310444,
+        "dec_min": -28.481252,
+        "dec_max": -28.255763
+    },
+    "UKIRT_year2017_field41_ccd4_md.tbl": {
+        "ra_min": 263.565307,
+        "ra_max": 268.0645,
+        "dec_min": -29.516915,
+        "dec_max": -28.301932
+    },
+    "UKIRT_year2016_field73_ccd4_md.tbl": {
+        "ra_min": 267.803576,
+        "ra_max": 268.060719,
+        "dec_min": -28.701551,
+        "dec_max": -28.474118
+    },
+    "UKIRT_year2016_field34_ccd4_md.tbl": {
+        "ra_min": 269.554672,
+        "ra_max": 269.810313,
+        "dec_min": -28.384695,
+        "dec_max": -28.158234
+    },
+    "UKIRT_year2018_field22_ccd4_md.tbl": {
+        "ra_min": 265.057976,
+        "ra_max": 266.978817,
+        "dec_min": -30.290827,
+        "dec_max": -27.565665
+    },
+    "UKIRT_year2015_field21_ccd4_md.tbl": {
+        "ra_min": 264.2801,
+        "ra_max": 264.534729,
+        "dec_min": -27.33654,
+        "dec_max": -27.110682
+    },
+    "UKIRT_year2016_field44_ccd4_md.tbl": {
+        "ra_min": 269.556448,
+        "ra_max": 269.811679,
+        "dec_min": -27.501508,
+        "dec_max": -27.274126
+    },
+    "UKIRT_year2018_field52_ccd4_md.tbl": {
+        "ra_min": 267.627316,
+        "ra_max": 267.8845,
+        "dec_min": -29.411792,
+        "dec_max": -29.186788
+    },
+    "UKIRT_year2019_field62_ccd3_md.tbl": {
+        "ra_min": 269.147242,
+        "ra_max": 269.404354,
+        "dec_min": -29.41019,
+        "dec_max": -29.185926
+    },
+    "UKIRT_year2019_field41_ccd2_md.tbl": {
+        "ra_min": 266.871555,
+        "ra_max": 268.569404,
+        "dec_min": -29.84307,
+        "dec_max": -28.742493
+    },
+    "UKIRT_year2016_field43_ccd1_md.tbl": {
+        "ra_min": 269.800969,
+        "ra_max": 270.059888,
+        "dec_min": -27.942717,
+        "dec_max": -27.715277
+    },
+    "UKIRT_year2019_field12_ccd3_md.tbl": {
+        "ra_min": 266.56182,
+        "ra_max": 268.126799,
+        "dec_min": -28.519701,
+        "dec_max": -27.421421
+    },
+    "UKIRT_year2019_field31_ccd2_md.tbl": {
+        "ra_min": 267.309944,
+        "ra_max": 268.871435,
+        "dec_min": -28.963888,
+        "dec_max": -27.85881
+    },
+    "UKIRT_year2015_field5_ccd4_md.tbl": {
+        "ra_min": 263.266472,
+        "ra_max": 263.521566,
+        "dec_min": -27.332616,
+        "dec_max": -27.105657
+    },
+    "UKIRT_year2015_field23_ccd3_md.tbl": {
+        "ra_min": 264.531751,
+        "ra_max": 264.786572,
+        "dec_min": -27.55858,
+        "dec_max": -27.333232
+    },
+    "UKIRT_year2016_field33_ccd1_md.tbl": {
+        "ra_min": 269.797445,
+        "ra_max": 270.061554,
+        "dec_min": -28.824686,
+        "dec_max": -28.59579
+    },
+    "UKIRT_year2019_field52_ccd4_md.tbl": {
+        "ra_min": 267.619106,
+        "ra_max": 267.886467,
+        "dec_min": -29.411874,
+        "dec_max": -29.184944
+    },
+    "UKIRT_year2017_field44_ccd4_md.tbl": {
+        "ra_min": 263.577082,
+        "ra_max": 268.06815,
+        "dec_min": -29.296314,
+        "dec_max": -28.080762
+    },
+    "UKIRT_year2019_field22_ccd4_md.tbl": {
+        "ra_min": 265.609282,
+        "ra_max": 266.980292,
+        "dec_min": -30.290653,
+        "dec_max": -29.168438
+    },
+    "UKIRT_year2015_field13_ccd4_md.tbl": {
+        "ra_min": 265.032322,
+        "ra_max": 265.286842,
+        "dec_min": -27.556134,
+        "dec_max": -27.330345
+    },
+    "UKIRT_year2017_field34_ccd4_md.tbl": {
+        "ra_min": 264.192837,
+        "ra_max": 268.37223,
+        "dec_min": -28.430294,
+        "dec_max": -27.197067
+    },
+    "UKIRT_year2016_field84_ccd2_md.tbl": {
+        "ra_min": 268.054899,
+        "ra_max": 268.309426,
+        "dec_min": -28.259795,
+        "dec_max": -28.034834
+    },
+    "UKIRT_year2015_field14_ccd1_md.tbl": {
+        "ra_min": 265.029617,
+        "ra_max": 265.285613,
+        "dec_min": -27.776402,
+        "dec_max": -27.550835
+    },
+    "UKIRT_year2018_field31_ccd2_md.tbl": {
+        "ra_min": 264.687562,
+        "ra_max": 268.873347,
+        "dec_min": -29.090952,
+        "dec_max": -27.857256
+    },
+    "UKIRT_year2015_field32_ccd2_md.tbl": {
+        "ra_min": 264.429599,
+        "ra_max": 264.690922,
+        "dec_min": -29.19283,
+        "dec_max": -28.967461
+    },
+    "UKIRT_year2017_field33_ccd1_md.tbl": {
+        "ra_min": 264.442931,
+        "ra_max": 268.620822,
+        "dec_min": -28.87928,
+        "dec_max": -27.638851
+    },
+    "UKIRT_year2018_field12_ccd3_md.tbl": {
+        "ra_min": 266.237577,
+        "ra_max": 268.125469,
+        "dec_min": -28.518651,
+        "dec_max": -26.693376
+    },
+    "UKIRT_year2015_field11_ccd3_md.tbl": {
+        "ra_min": 265.778643,
+        "ra_max": 266.032262,
+        "dec_min": -27.338527,
+        "dec_max": -27.113686
+    },
+    "UKIRT_year2015_field42_ccd2_md.tbl": {
+        "ra_min": 263.852421,
+        "ra_max": 264.115328,
+        "dec_min": -30.242449,
+        "dec_max": -30.017428
+    },
+    "UKIRT_year2016_field74_ccd3_md.tbl": {
+        "ra_min": 268.05785,
+        "ra_max": 268.315512,
+        "dec_min": -28.704806,
+        "dec_max": -28.478795
+    },
+    "UKIRT_year2018_field41_ccd2_md.tbl": {
+        "ra_min": 264.074429,
+        "ra_max": 268.572928,
+        "dec_min": -29.956725,
+        "dec_max": -28.740777
+    },
+    "UKIRT_year2017_field43_ccd1_md.tbl": {
+        "ra_min": 263.828706,
+        "ra_max": 268.317315,
+        "dec_min": -29.747031,
+        "dec_max": -28.523684
+    },
+    "UKIRT_year2018_field62_ccd3_md.tbl": {
+        "ra_min": 269.145831,
+        "ra_max": 269.403288,
+        "dec_min": -29.409518,
+        "dec_max": -29.184155
+    },
+    "UKIRT_year2016_field71_ccd1_md.tbl": {
+        "ra_min": 267.546651,
+        "ra_max": 267.807729,
+        "dec_min": -29.363011,
+        "dec_max": -29.136603
+    },
+    "UKIRT_year2018_field24_ccd2_md.tbl": {
+        "ra_min": 265.317742,
+        "ra_max": 267.24417,
+        "dec_min": -30.505888,
+        "dec_max": -27.776682
+    },
+    "UKIRT_year2016_field11_ccd3_md.tbl": {
+        "ra_min": 271.073297,
+        "ra_max": 271.330248,
+        "dec_min": -28.325264,
+        "dec_max": -28.099875
+    },
+    "UKIRT_year2017_field23_ccd3_md.tbl": {
+        "ra_min": 265.565733,
+        "ra_max": 267.495725,
+        "dec_min": -30.071093,
+        "dec_max": -27.3442
+    },
+    "UKIRT_year2016_field14_ccd1_md.tbl": {
+        "ra_min": 270.566305,
+        "ra_max": 270.82588,
+        "dec_min": -28.542582,
+        "dec_max": -28.315787
+    },
+    "UKIRT_year2016_field32_ccd2_md.tbl": {
+        "ra_min": 270.304354,
+        "ra_max": 270.564284,
+        "dec_min": -29.047616,
+        "dec_max": -28.822304
+    },
+    "UKIRT_year2018_field54_ccd2_md.tbl": {
+        "ra_min": 267.885811,
+        "ra_max": 268.145499,
+        "dec_min": -29.627841,
+        "dec_max": -29.402907
+    },
+    "UKIRT_year2016_field61_ccd3_md.tbl": {
+        "ra_min": 269.057599,
+        "ra_max": 269.312802,
+        "dec_min": -27.91026,
+        "dec_max": -27.684807
+    },
+    "UKIRT_year2017_field53_ccd3_md.tbl": {
+        "ra_min": 268.137627,
+        "ra_max": 268.396518,
+        "dec_min": -29.191536,
+        "dec_max": -28.964455
+    },
+    "UKIRT_year2016_field64_ccd1_md.tbl": {
+        "ra_min": 268.552508,
+        "ra_max": 268.808319,
+        "dec_min": -28.127018,
+        "dec_max": -27.900804
+    },
+    "UKIRT_year2016_field42_ccd2_md.tbl": {
+        "ra_min": 270.304081,
+        "ra_max": 270.560677,
+        "dec_min": -28.166858,
+        "dec_max": -27.938949
+    },
+    "UKIRT_year2016_field63_ccd4_md.tbl": {
+        "ra_min": 268.80816,
+        "ra_max": 269.06309,
+        "dec_min": -27.635447,
+        "dec_max": -27.408538
+    },
+    "UKIRT_year2017_field51_ccd4_md.tbl": {
+        "ra_min": 267.374749,
+        "ra_max": 267.631813,
+        "dec_min": -29.409056,
+        "dec_max": -29.184876
+    },
+    "UKIRT_year2016_field13_ccd4_md.tbl": {
+        "ra_min": 270.821372,
+        "ra_max": 271.07969,
+        "dec_min": -28.101484,
+        "dec_max": -27.872417
+    },
+    "UKIRT_year2017_field21_ccd4_md.tbl": {
+        "ra_min": 264.809084,
+        "ra_max": 266.723928,
+        "dec_min": -30.286954,
+        "dec_max": -27.558528
+    },
+    "UKIRT_year2016_field53_ccd3_md.tbl": {
+        "ra_min": 269.30578,
+        "ra_max": 269.568087,
+        "dec_min": -28.523555,
+        "dec_max": -28.293823
+    },
+    "UKIRT_year2015_field43_ccd1_md.tbl": {
+        "ra_min": 263.086674,
+        "ra_max": 263.350429,
+        "dec_min": -30.24222,
+        "dec_max": -30.016052
+    },
+    "UKIRT_year2017_field42_ccd2_md.tbl": {
+        "ra_min": 264.327116,
+        "ra_max": 268.824853,
+        "dec_min": -29.966439,
+        "dec_max": -28.739179
+    },
+    "UKIRT_year2017_field64_ccd1_md.tbl": {
+        "ra_min": 268.385071,
+        "ra_max": 268.643498,
+        "dec_min": -29.629125,
+        "dec_max": -29.403824
+    },
+    "UKIRT_year2019_field54_ccd2_md.tbl": {
+        "ra_min": 267.884976,
+        "ra_max": 268.143473,
+        "dec_min": -29.628579,
+        "dec_max": -29.404487
+    },
+    "UKIRT_year2017_field61_ccd3_md.tbl": {
+        "ra_min": 268.893083,
+        "ra_max": 269.150462,
+        "dec_min": -29.40949,
+        "dec_max": -29.184116
+    },
+    "UKIRT_year2016_field23_ccd3_md.tbl": {
+        "ra_min": 271.322899,
+        "ra_max": 271.577337,
+        "dec_min": -27.22077,
+        "dec_max": -26.995561
+    },
+    "UKIRT_year2015_field33_ccd1_md.tbl": {
+        "ra_min": 263.672978,
+        "ra_max": 263.932935,
+        "dec_min": -29.192894,
+        "dec_max": -28.966149
+    },
+    "UKIRT_year2017_field32_ccd2_md.tbl": {
+        "ra_min": 264.93853,
+        "ra_max": 269.121857,
+        "dec_min": -29.09902,
+        "dec_max": -27.858251
+    },
+    "UKIRT_year2016_field82_ccd4_md.tbl": {
+        "ra_min": 267.805912,
+        "ra_max": 268.062795,
+        "dec_min": -28.039528,
+        "dec_max": -27.811525
+    },
+    "UKIRT_year2017_field14_ccd1_md.tbl": {
+        "ra_min": 265.501474,
+        "ra_max": 267.381716,
+        "dec_min": -28.732926,
+        "dec_max": -26.908124
+    },
+    "UKIRT_year2019_field24_ccd2_md.tbl": {
+        "ra_min": 265.868447,
+        "ra_max": 267.242107,
+        "dec_min": -30.507586,
+        "dec_max": -29.38396
+    },
+    "UKIRT_year2017_field11_ccd3_md.tbl": {
+        "ra_min": 265.990516,
+        "ra_max": 267.877506,
+        "dec_min": -28.513929,
+        "dec_max": -26.687559
+    },
+    "UKIRT_year2016_field21_ccd4_md.tbl": {
+        "ra_min": 270.573709,
+        "ra_max": 270.828885,
+        "dec_min": -27.438859,
+        "dec_max": -27.212177
+    },
+    "UKIRT_year2015_field34_ccd4_md.tbl": {
+        "ra_min": 263.677431,
+        "ra_max": 263.934683,
+        "dec_min": -28.531993,
+        "dec_max": -28.305231
+    },
+    "UKIRT_year2017_field13_ccd4_md.tbl": {
+        "ra_min": 265.748208,
+        "ra_max": 267.628974,
+        "dec_min": -28.296359,
+        "dec_max": -26.472198
+    },
+    "UKIRT_year2016_field51_ccd4_md.tbl": {
+        "ra_min": 268.549487,
+        "ra_max": 268.809963,
+        "dec_min": -28.790805,
+        "dec_max": -28.562958
+    },
+    "UKIRT_year2015_field44_ccd4_md.tbl": {
+        "ra_min": 263.092275,
+        "ra_max": 263.352915,
+        "dec_min": -29.582236,
+        "dec_max": -29.355094
+    },
+    "UKIRT_year2017_field63_ccd4_md.tbl": {
+        "ra_min": 268.635985,
+        "ra_max": 268.898155,
+        "dec_min": -29.188229,
+        "dec_max": -28.962078
+    },
+    "UKIRT_year2019_field11_ccd2_md.tbl": {
+        "ra_min": 266.308584,
+        "ra_max": 267.877888,
+        "dec_min": -28.953647,
+        "dec_max": -27.857521
+    },
+    "UKIRT_year2017_field24_ccd3_md.tbl": {
+        "ra_min": 265.317208,
+        "ra_max": 267.240796,
+        "dec_min": -30.06736,
+        "dec_max": -27.337273
+    },
+    "UKIRT_year2016_field13_ccd1_md.tbl": {
+        "ra_min": 270.816318,
+        "ra_max": 271.076917,
+        "dec_min": -28.541779,
+        "dec_max": -28.313315
+    },
+    "UKIRT_year2018_field23_ccd2_md.tbl": {
+        "ra_min": 265.566962,
+        "ra_max": 267.49919,
+        "dec_min": -30.509678,
+        "dec_max": -27.783495
+    },
+    "UKIRT_year2017_field21_ccd1_md.tbl": {
+        "ra_min": 264.80892,
+        "ra_max": 266.724406,
+        "dec_min": -30.727734,
+        "dec_max": -27.999307
+    },
+    "UKIRT_year2019_field32_ccd3_md.tbl": {
+        "ra_min": 267.562907,
+        "ra_max": 269.120382,
+        "dec_min": -28.528442,
+        "dec_max": -27.420785
+    },
+    "UKIRT_year2019_field61_ccd2_md.tbl": {
+        "ra_min": 268.892663,
+        "ra_max": 269.151536,
+        "dec_min": -29.849153,
+        "dec_max": -29.624901
+    },
+    "UKIRT_year2017_field54_ccd3_md.tbl": {
+        "ra_min": 267.885319,
+        "ra_max": 268.142326,
+        "dec_min": -29.188979,
+        "dec_max": -28.96339
+    },
+    "UKIRT_year2016_field63_ccd1_md.tbl": {
+        "ra_min": 268.803188,
+        "ra_max": 269.060385,
+        "dec_min": -28.075651,
+        "dec_max": -27.849569
+    },
+    "UKIRT_year2018_field53_ccd2_md.tbl": {
+        "ra_min": 268.138487,
+        "ra_max": 268.398135,
+        "dec_min": -29.630433,
+        "dec_max": -29.405394
+    },
+    "UKIRT_year2017_field51_ccd1_md.tbl": {
+        "ra_min": 267.373875,
+        "ra_max": 267.632384,
+        "dec_min": -29.849832,
+        "dec_max": -29.625697
+    },
+    "UKIRT_year2019_field42_ccd3_md.tbl": {
+        "ra_min": 267.127084,
+        "ra_max": 268.820181,
+        "dec_min": -29.408213,
+        "dec_max": -28.304876
+    },
+    "UKIRT_year2016_field64_ccd4_md.tbl": {
+        "ra_min": 268.55758,
+        "ra_max": 268.811138,
+        "dec_min": -27.686626,
+        "dec_max": -27.459733
+    },
+    "UKIRT_year2016_field14_ccd4_md.tbl": {
+        "ra_min": 270.571387,
+        "ra_max": 270.828393,
+        "dec_min": -28.10226,
+        "dec_max": -27.874847
+    },
+    "UKIRT_year2019_field53_ccd2_md.tbl": {
+        "ra_min": 268.136834,
+        "ra_max": 268.396108,
+        "dec_min": -29.631191,
+        "dec_max": -29.407124
+    },
+    "UKIRT_year2018_field42_ccd3_md.tbl": {
+        "ra_min": 264.326627,
+        "ra_max": 268.819416,
+        "dec_min": -29.52748,
+        "dec_max": -28.303125
+    },
+    "UKIRT_year2015_field41_ccd3_md.tbl": {
+        "ra_min": 263.854552,
+        "ra_max": 264.113935,
+        "dec_min": -29.584544,
+        "dec_max": -29.357895
+    },
+    "UKIRT_year2016_field51_ccd1_md.tbl": {
+        "ra_min": 268.544378,
+        "ra_max": 268.807368,
+        "dec_min": -29.231181,
+        "dec_max": -29.003968
+    },
+    "UKIRT_year2015_field44_ccd1_md.tbl": {
+        "ra_min": 263.088341,
+        "ra_max": 263.351167,
+        "dec_min": -30.022558,
+        "dec_max": -29.795918
+    },
+    "UKIRT_year2018_field61_ccd2_md.tbl": {
+        "ra_min": 268.893483,
+        "ra_max": 269.153576,
+        "dec_min": -29.848509,
+        "dec_max": -29.623358
+    },
+    "UKIRT_year2016_field54_ccd3_md.tbl": {
+        "ra_min": 269.056724,
+        "ra_max": 269.314058,
+        "dec_min": -28.57292,
+        "dec_max": -28.347426
+    },
+    "UKIRT_year2017_field63_ccd1_md.tbl": {
+        "ra_min": 268.635247,
+        "ra_max": 268.898564,
+        "dec_min": -29.628975,
+        "dec_max": -29.402663
+    },
+    "UKIRT_year2019_field23_ccd2_md.tbl": {
+        "ra_min": 266.120781,
+        "ra_max": 267.496928,
+        "dec_min": -30.510322,
+        "dec_max": -29.389457
+    },
+    "UKIRT_year2015_field31_ccd3_md.tbl": {
+        "ra_min": 264.431375,
+        "ra_max": 264.688354,
+        "dec_min": -28.534022,
+        "dec_max": -28.3084
+    },
+    "UKIRT_year2018_field32_ccd3_md.tbl": {
+        "ra_min": 264.937956,
+        "ra_max": 269.118753,
+        "dec_min": -28.660129,
+        "dec_max": -27.419086
+    },
+    "UKIRT_year2016_field21_ccd1_md.tbl": {
+        "ra_min": 270.568764,
+        "ra_max": 270.825743,
+        "dec_min": -27.879297,
+        "dec_max": -27.653093
+    },
+    "UKIRT_year2015_field34_ccd1_md.tbl": {
+        "ra_min": 263.673606,
+        "ra_max": 263.933126,
+        "dec_min": -28.972167,
+        "dec_max": -28.74635
+    },
+    "UKIRT_year2015_field12_ccd2_md.tbl": {
+        "ra_min": 265.777796,
+        "ra_max": 266.033683,
+        "dec_min": -27.997763,
+        "dec_max": -27.772236
+    },
+    "UKIRT_year2018_field11_ccd2_md.tbl": {
+        "ra_min": 265.991308,
+        "ra_max": 267.880074,
+        "dec_min": -28.953233,
+        "dec_max": -27.126919
+    },
+    "UKIRT_year2016_field24_ccd3_md.tbl": {
+        "ra_min": 271.072668,
+        "ra_max": 271.329702,
+        "dec_min": -27.222293,
+        "dec_max": -26.995889
+    },
+    "UKIRT_year2017_field13_ccd1_md.tbl": {
+        "ra_min": 265.748062,
+        "ra_max": 267.629433,
+        "dec_min": -28.737235,
+        "dec_max": -26.91296
+    },
+    "UKIRT_year2015_field33_ccd4_md.tbl": {
+        "ra_min": 263.676502,
+        "ra_max": 263.934519,
+        "dec_min": -28.75262,
+        "dec_max": -28.525225
+    },
+    "UKIRT_year2017_field14_ccd4_md.tbl": {
+        "ra_min": 265.501447,
+        "ra_max": 267.381361,
+        "dec_min": -28.292093,
+        "dec_max": -26.467515
+    },
+    "UKIRT_year2016_field82_ccd1_md.tbl": {
+        "ra_min": 267.800816,
+        "ra_max": 268.060063,
+        "dec_min": -28.479898,
+        "dec_max": -28.252429
+    },
+    "UKIRT_year2015_field43_ccd4_md.tbl": {
+        "ra_min": 263.090909,
+        "ra_max": 263.352041,
+        "dec_min": -29.801959,
+        "dec_max": -29.575105
+    },
+    "UKIRT_year2017_field64_ccd4_md.tbl": {
+        "ra_min": 268.386041,
+        "ra_max": 268.643279,
+        "dec_min": -29.188424,
+        "dec_max": -28.963036
+    },
+    "UKIRT_year2016_field33_ccd4_md.tbl": {
+        "ra_min": 269.801597,
+        "ra_max": 270.064259,
+        "dec_min": -28.38421,
+        "dec_max": -28.154922
+    },
+    "UKIRT_year2015_field5_ccd1_md.tbl": {
+        "ra_min": 263.262593,
+        "ra_max": 263.519954,
+        "dec_min": -27.772883,
+        "dec_max": -27.546464
+    },
+    "UKIRT_year2016_field43_ccd4_md.tbl": {
+        "ra_min": 269.805941,
+        "ra_max": 270.062647,
+        "dec_min": -27.502481,
+        "dec_max": -27.274219
+    },
+    "UKIRT_year2016_field44_ccd1_md.tbl": {
+        "ra_min": 269.551449,
+        "ra_max": 269.808828,
+        "dec_min": -27.94195,
+        "dec_max": -27.715141
+    },
+    "UKIRT_year2016_field62_ccd2_md.tbl": {
+        "ra_min": 269.305726,
+        "ra_max": 269.560901,
+        "dec_min": -28.299405,
+        "dec_max": -28.074104
+    },
+    "UKIRT_year2016_field41_ccd3_md.tbl": {
+        "ra_min": 270.057398,
+        "ra_max": 270.310884,
+        "dec_min": -27.725544,
+        "dec_max": -27.500138
+    },
+    "UKIRT_year2018_field52_ccd1_md.tbl": {
+        "ra_min": 267.626565,
+        "ra_max": 267.885019,
+        "dec_min": -29.852547,
+        "dec_max": -29.627678
+    },
+    "UKIRT_year2016_field34_ccd1_md.tbl": {
+        "ra_min": 269.549345,
+        "ra_max": 269.807704,
+        "dec_min": -28.825096,
+        "dec_max": -28.599243
+    },
+    "UKIRT_year2015_field24_ccd3_md.tbl": {
+        "ra_min": 264.531341,
+        "ra_max": 264.785534,
+        "dec_min": -27.339109,
+        "dec_max": -27.112595
+    },
+    "UKIRT_year2016_field12_ccd2_md.tbl": {
+        "ra_min": 271.321997,
+        "ra_max": 271.580042,
+        "dec_min": -28.766025,
+        "dec_max": -28.538928
+    },
+    "UKIRT_year2016_field31_ccd3_md.tbl": {
+        "ra_min": 270.05823,
+        "ra_max": 270.313782,
+        "dec_min": -28.608246,
+        "dec_max": -28.383462
+    },
+    "UKIRT_year2018_field22_ccd1_md.tbl": {
+        "ra_min": 265.057539,
+        "ra_max": 266.979309,
+        "dec_min": -30.731593,
+        "dec_max": -28.006409
+    },
+    "UKIRT_year2015_field21_ccd1_md.tbl": {
+        "ra_min": 264.275674,
+        "ra_max": 264.533186,
+        "dec_min": -27.776935,
+        "dec_max": -27.551634
+    },
+    "UKIRT_year2017_field43_ccd4_md.tbl": {
+        "ra_min": 263.829307,
+        "ra_max": 268.316901,
+        "dec_min": -29.306395,
+        "dec_max": -28.082844
+    },
+    "UKIRT_year2016_field71_ccd4_md.tbl": {
+        "ra_min": 267.552006,
+        "ra_max": 267.810597,
+        "dec_min": -28.922552,
+        "dec_max": -28.695595
+    },
+    "UKIRT_year2015_field14_ccd4_md.tbl": {
+        "ra_min": 265.033114,
+        "ra_max": 265.287116,
+        "dec_min": -27.336063,
+        "dec_max": -27.109846
+    },
+    "UKIRT_year2016_field83_ccd2_md.tbl": {
+        "ra_min": 268.305595,
+        "ra_max": 268.561727,
+        "dec_min": -28.259201,
+        "dec_max": -28.033092
+    },
+    "UKIRT_year2017_field33_ccd4_md.tbl": {
+        "ra_min": 264.443478,
+        "ra_max": 268.620388,
+        "dec_min": -28.43848,
+        "dec_max": -27.1983
+    },
+    "UKIRT_year2019_field22_ccd1_md.tbl": {
+        "ra_min": 265.604337,
+        "ra_max": 266.978489,
+        "dec_min": -30.730975,
+        "dec_max": -29.609533
+    },
+    "UKIRT_year2017_field31_ccd3_md.tbl": {
+        "ra_min": 264.686933,
+        "ra_max": 268.870248,
+        "dec_min": -28.652685,
+        "dec_max": -27.418104
+    },
+    "UKIRT_year2015_field13_ccd1_md.tbl": {
+        "ra_min": 265.028634,
+        "ra_max": 265.285285,
+        "dec_min": -27.9965,
+        "dec_max": -27.771319
+    },
+    "UKIRT_year2017_field12_ccd2_md.tbl": {
+        "ra_min": 266.238151,
+        "ra_max": 268.12852,
+        "dec_min": -28.958069,
+        "dec_max": -27.13225
+    },
+    "UKIRT_year2017_field34_ccd1_md.tbl": {
+        "ra_min": 264.192291,
+        "ra_max": 268.372667,
+        "dec_min": -28.8711,
+        "dec_max": -27.637662
+    },
+    "UKIRT_year2019_field52_ccd1_md.tbl": {
+        "ra_min": 267.615199,
+        "ra_max": 267.884882,
+        "dec_min": -29.852206,
+        "dec_max": -29.626031
+    },
+    "UKIRT_year2017_field41_ccd3_md.tbl": {
+        "ra_min": 264.073878,
+        "ra_max": 268.56853,
+        "dec_min": -29.517812,
+        "dec_max": -28.301507
+    },
+    "UKIRT_year2016_field73_ccd3_md.tbl": {
+        "ra_min": 268.308409,
+        "ra_max": 268.56541,
+        "dec_min": -28.704526,
+        "dec_max": -28.478829
+    },
+    "UKIRT_year2017_field62_ccd2_md.tbl": {
+        "ra_min": 269.146172,
+        "ra_max": 269.406392,
+        "dec_min": -29.848496,
+        "dec_max": -29.623272
+    },
+    "UKIRT_year2017_field44_ccd1_md.tbl": {
+        "ra_min": 263.576317,
+        "ra_max": 268.068505,
+        "dec_min": -29.737034,
+        "dec_max": -28.521568
+    },
+    "UKIRT_year2016_field34_ccd3_md.tbl": {
+        "ra_min": 270.057948,
+        "ra_max": 270.313479,
+        "dec_min": -28.387767,
+        "dec_max": -28.162792
+    },
+    "UKIRT_year2015_field24_ccd1_md.tbl": {
+        "ra_min": 264.029541,
+        "ra_max": 264.285755,
+        "dec_min": -27.77715,
+        "dec_max": -27.550381
+    },
+    "UKIRT_year2019_field33_ccd2_md.tbl": {
+        "ra_min": 267.565229,
+        "ra_max": 269.120655,
+        "dec_min": -28.74663,
+        "dec_max": -27.639097
+    },
+    "UKIRT_year2016_field31_ccd1_md.tbl": {
+        "ra_min": 269.54889,
+        "ra_max": 269.807061,
+        "dec_min": -29.045615,
+        "dec_max": -28.819666
+    },
+    "UKIRT_year2018_field22_ccd3_md.tbl": {
+        "ra_min": 265.558301,
+        "ra_max": 267.491639,
+        "dec_min": -30.291746,
+        "dec_max": -27.565277
+    },
+    "UKIRT_year2015_field21_ccd3_md.tbl": {
+        "ra_min": 264.77854,
+        "ra_max": 265.032951,
+        "dec_min": -27.339461,
+        "dec_max": -27.11373
+    },
+    "UKIRT_year2016_field44_ccd3_md.tbl": {
+        "ra_min": 270.055708,
+        "ra_max": 270.310815,
+        "dec_min": -27.504494,
+        "dec_max": -27.278684
+    },
+    "UKIRT_year2019_field43_ccd2_md.tbl": {
+        "ra_min": 267.12992,
+        "ra_max": 268.820826,
+        "dec_min": -29.626509,
+        "dec_max": -28.523396
+    },
+    "UKIRT_year2016_field41_ccd1_md.tbl": {
+        "ra_min": 269.55205,
+        "ra_max": 269.808,
+        "dec_min": -28.162904,
+        "dec_max": -27.936416
+    },
+    "UKIRT_year2018_field52_ccd3_md.tbl": {
+        "ra_min": 268.135441,
+        "ra_max": 268.392994,
+        "dec_min": -29.412734,
+        "dec_max": -29.18647
+    },
+    "UKIRT_year2019_field62_ccd4_md.tbl": {
+        "ra_min": 268.63899,
+        "ra_max": 268.896187,
+        "dec_min": -29.407893,
+        "dec_max": -29.182735
+    },
+    "UKIRT_year2019_field12_ccd4_md.tbl": {
+        "ra_min": 266.057807,
+        "ra_max": 267.626838,
+        "dec_min": -28.517438,
+        "dec_max": -27.41816
+    },
+    "UKIRT_year2015_field5_ccd3_md.tbl": {
+        "ra_min": 263.764967,
+        "ra_max": 264.019788,
+        "dec_min": -27.334841,
+        "dec_max": -27.108657
+    },
+    "UKIRT_year2015_field23_ccd4_md.tbl": {
+        "ra_min": 264.032246,
+        "ra_max": 264.287258,
+        "dec_min": -27.556316,
+        "dec_max": -27.330084
+    },
+    "UKIRT_year2018_field43_ccd2_md.tbl": {
+        "ra_min": 264.337774,
+        "ra_max": 268.822968,
+        "dec_min": -29.745853,
+        "dec_max": -28.521816
+    },
+    "UKIRT_year2019_field52_ccd3_md.tbl": {
+        "ra_min": 268.127245,
+        "ra_max": 268.394606,
+        "dec_min": -29.414131,
+        "dec_max": -29.188284
+    },
+    "UKIRT_year2017_field41_ccd1_md.tbl": {
+        "ra_min": 263.564596,
+        "ra_max": 268.064899,
+        "dec_min": -29.957684,
+        "dec_max": -28.742618
+    },
+    "UKIRT_year2017_field44_ccd3_md.tbl": {
+        "ra_min": 264.084538,
+        "ra_max": 268.57107,
+        "dec_min": -29.297192,
+        "dec_max": -28.08038
+    },
+    "UKIRT_year2016_field73_ccd1_md.tbl": {
+        "ra_min": 267.798358,
+        "ra_max": 268.057905,
+        "dec_min": -29.141911,
+        "dec_max": -28.915164
+    },
+    "UKIRT_year2018_field33_ccd2_md.tbl": {
+        "ra_min": 264.947375,
+        "ra_max": 269.122345,
+        "dec_min": -28.878368,
+        "dec_max": -27.637527
+    },
+    "UKIRT_year2019_field22_ccd3_md.tbl": {
+        "ra_min": 266.11753,
+        "ra_max": 267.493103,
+        "dec_min": -30.292937,
+        "dec_max": -29.171678
+    },
+    "UKIRT_year2017_field31_ccd1_md.tbl": {
+        "ra_min": 264.181444,
+        "ra_max": 268.370796,
+        "dec_min": -29.092231,
+        "dec_max": -27.859023
+    },
+    "UKIRT_year2017_field34_ccd3_md.tbl": {
+        "ra_min": 264.696113,
+        "ra_max": 268.871052,
+        "dec_min": -28.431214,
+        "dec_max": -27.196779
+    },
+    "UKIRT_year2015_field13_ccd3_md.tbl": {
+        "ra_min": 265.531664,
+        "ra_max": 265.785993,
+        "dec_min": -27.558483,
+        "dec_max": -27.333584
+    },
+    "UKIRT_year2018_field12_ccd4_md.tbl": {
+        "ra_min": 265.741214,
+        "ra_max": 267.625395,
+        "dec_min": -28.517723,
+        "dec_max": -26.693688
+    },
+    "UKIRT_year2015_field11_ccd4_md.tbl": {
+        "ra_min": 265.280231,
+        "ra_max": 265.534068,
+        "dec_min": -27.336309,
+        "dec_max": -27.110446
+    },
+    "UKIRT_year2016_field74_ccd4_md.tbl": {
+        "ra_min": 267.552908,
+        "ra_max": 267.811034,
+        "dec_min": -28.701934,
+        "dec_max": -28.474318
+    },
+    "UKIRT_year2018_field62_ccd4_md.tbl": {
+        "ra_min": 268.637829,
+        "ra_max": 268.894849,
+        "dec_min": -29.408616,
+        "dec_max": -29.184333
+    },
+    "UKIRT_year2016_field11_ccd4_md.tbl": {
+        "ra_min": 270.57024,
+        "ra_max": 270.827492,
+        "dec_min": -28.322237,
+        "dec_max": -28.095237
+    },
+    "UKIRT_year2017_field23_ccd4_md.tbl": {
+        "ra_min": 265.066309,
+        "ra_max": 266.983917,
+        "dec_min": -30.070109,
+        "dec_max": -27.344584
+    },
+    "UKIRT_year2016_field61_ccd4_md.tbl": {
+        "ra_min": 268.556509,
+        "ra_max": 268.812012,
+        "dec_min": -27.90727,
+        "dec_max": -27.680063
+    },
+    "UKIRT_year2017_field53_ccd4_md.tbl": {
+        "ra_min": 267.630635,
+        "ra_max": 267.889254,
+        "dec_min": -29.190627,
+        "dec_max": -28.964903
+    },
+    "UKIRT_year2016_field63_ccd3_md.tbl": {
+        "ra_min": 269.308021,
+        "ra_max": 269.56265,
+        "dec_min": -27.638326,
+        "dec_max": -27.413208
+    },
+    "UKIRT_year2017_field54_ccd1_md.tbl": {
+        "ra_min": 267.377672,
+        "ra_max": 267.635498,
+        "dec_min": -29.628826,
+        "dec_max": -29.404702
+    },
+    "UKIRT_year2019_field64_ccd2_md.tbl": {
+        "ra_min": 268.891625,
+        "ra_max": 269.151555,
+        "dec_min": -29.628836,
+        "dec_max": -29.403677
+    },
+    "UKIRT_year2017_field51_ccd3_md.tbl": {
+        "ra_min": 267.882697,
+        "ra_max": 268.140195,
+        "dec_min": -29.409917,
+        "dec_max": -29.184394
+    },
+    "UKIRT_year2019_field42_ccd1_md.tbl": {
+        "ra_min": 266.614385,
+        "ra_max": 268.314611,
+        "dec_min": -29.846219,
+        "dec_max": -28.742717
+    },
+    "UKIRT_year2016_field13_ccd3_md.tbl": {
+        "ra_min": 271.323432,
+        "ra_max": 271.581326,
+        "dec_min": -28.104779,
+        "dec_max": -27.877059
+    },
+    "UKIRT_year2017_field24_ccd1_md.tbl": {
+        "ra_min": 264.81739,
+        "ra_max": 266.729624,
+        "dec_min": -30.507381,
+        "dec_max": -27.778642
+    },
+    "UKIRT_year2019_field14_ccd2_md.tbl": {
+        "ra_min": 266.314758,
+        "ra_max": 267.880839,
+        "dec_min": -28.732922,
+        "dec_max": -27.636619
+    },
+    "UKIRT_year2017_field21_ccd3_md.tbl": {
+        "ra_min": 265.309519,
+        "ra_max": 267.236889,
+        "dec_min": -30.28771,
+        "dec_max": -27.558077
+    },
+    "UKIRT_year2019_field32_ccd1_md.tbl": {
+        "ra_min": 267.055014,
+        "ra_max": 268.619073,
+        "dec_min": -28.966453,
+        "dec_max": -27.85867
+    },
+    "UKIRT_year2016_field53_ccd4_md.tbl": {
+        "ra_min": 268.801685,
+        "ra_max": 269.064224,
+        "dec_min": -28.520566,
+        "dec_max": -28.289127
+    },
+    "UKIRT_year2017_field61_ccd4_md.tbl": {
+        "ra_min": 268.385071,
+        "ra_max": 268.64205,
+        "dec_min": -29.408578,
+        "dec_max": -29.184432
+    },
+    "UKIRT_year2016_field82_ccd3_md.tbl": {
+        "ra_min": 268.307616,
+        "ra_max": 268.564295,
+        "dec_min": -28.04252,
+        "dec_max": -27.816114
+    },
+    "UKIRT_year2016_field23_ccd4_md.tbl": {
+        "ra_min": 270.82506,
+        "ra_max": 271.079444,
+        "dec_min": -27.217859,
+        "dec_max": -26.990907
+    },
+    "UKIRT_year2017_field11_ccd4_md.tbl": {
+        "ra_min": 265.493988,
+        "ra_max": 267.377509,
+        "dec_min": -28.512809,
+        "dec_max": -26.688075
+    },
+    "UKIRT_year2015_field31_ccd1_md.tbl": {
+        "ra_min": 263.923892,
+        "ra_max": 264.182906,
+        "dec_min": -28.972112,
+        "dec_max": -28.746067
+    },
+    "UKIRT_year2018_field32_ccd1_md.tbl": {
+        "ra_min": 264.433178,
+        "ra_max": 268.619264,
+        "dec_min": -29.099959,
+        "dec_max": -27.860213
+    },
+    "UKIRT_year2018_field14_ccd2_md.tbl": {
+        "ra_min": 265.997674,
+        "ra_max": 267.882396,
+        "dec_min": -28.731867,
+        "dec_max": -26.906372
+    },
+    "UKIRT_year2016_field21_ccd3_md.tbl": {
+        "ra_min": 271.072668,
+        "ra_max": 271.327707,
+        "dec_min": -27.442069,
+        "dec_max": -27.216694
+    },
+    "UKIRT_year2017_field13_ccd3_md.tbl": {
+        "ra_min": 266.24367,
+        "ra_max": 268.1279,
+        "dec_min": -28.297501,
+        "dec_max": -26.471861
+    },
+    "UKIRT_year2015_field34_ccd3_md.tbl": {
+        "ra_min": 264.181417,
+        "ra_max": 264.438424,
+        "dec_min": -28.534194,
+        "dec_max": -28.308486
+    },
+    "UKIRT_year2016_field24_ccd1_md.tbl": {
+        "ra_min": 270.56972,
+        "ra_max": 270.829076,
+        "dec_min": -27.659618,
+        "dec_max": -27.43234
+    },
+    "UKIRT_year2018_field42_ccd1_md.tbl": {
+        "ra_min": 263.81745,
+        "ra_max": 268.315348,
+        "dec_min": -29.967286,
+        "dec_max": -28.744407
+    },
+    "UKIRT_year2015_field41_ccd1_md.tbl": {
+        "ra_min": 263.341441,
+        "ra_max": 263.603337,
+        "dec_min": -30.022462,
+        "dec_max": -29.795703
+    },
+    "UKIRT_year2018_field64_ccd2_md.tbl": {
+        "ra_min": 268.893237,
+        "ra_max": 269.153658,
+        "dec_min": -29.628254,
+        "dec_max": -29.402021
+    },
+    "UKIRT_year2016_field51_ccd3_md.tbl": {
+        "ra_min": 269.054621,
+        "ra_max": 269.315069,
+        "dec_min": -28.793725,
+        "dec_max": -28.567667
+    },
+    "UKIRT_year2017_field63_ccd3_md.tbl": {
+        "ra_min": 269.14273,
+        "ra_max": 269.405364,
+        "dec_min": -29.189124,
+        "dec_max": -28.961474
+    },
+    "UKIRT_year2015_field44_ccd3_md.tbl": {
+        "ra_min": 263.601534,
+        "ra_max": 263.861737,
+        "dec_min": -29.584266,
+        "dec_max": -29.358561
+    },
+    "UKIRT_year2016_field72_ccd2_md.tbl": {
+        "ra_min": 268.306742,
+        "ra_max": 268.564568,
+        "dec_min": -29.365545,
+        "dec_max": -29.139279
+    },
+    "UKIRT_year2016_field54_ccd1_md.tbl": {
+        "ra_min": 268.547083,
+        "ra_max": 268.807258,
+        "dec_min": -29.010313,
+        "dec_max": -28.783655
+    },
+    "UKIRT_year2018_field34_ccd3_md.tbl": {
+        "ra_min": 264.696195,
+        "ra_max": 268.870752,
+        "dec_min": -28.431199,
+        "dec_max": -27.197297
+    },
+    "UKIRT_year2016_field83_ccd4_md.tbl": {
+        "ra_min": 267.807464,
+        "ra_max": 268.062932,
+        "dec_min": -27.816984,
+        "dec_max": -27.589468
+    },
+    "UKIRT_year2017_field33_ccd2_md.tbl": {
+        "ra_min": 264.947245,
+        "ra_max": 269.122343,
+        "dec_min": -28.87836,
+        "dec_max": -27.637015
+    },
+    "UKIRT_year2018_field31_ccd1_md.tbl": {
+        "ra_min": 264.182182,
+        "ra_max": 268.370782,
+        "dec_min": -29.091852,
+        "dec_max": -27.85922
+    },
+    "UKIRT_year2015_field32_ccd1_md.tbl": {
+        "ra_min": 263.92258,
+        "ra_max": 264.184095,
+        "dec_min": -29.191907,
+        "dec_max": -28.965907
+    },
+    "UKIRT_year2015_field14_ccd2_md.tbl": {
+        "ra_min": 265.529778,
+        "ra_max": 265.785528,
+        "dec_min": -27.777396,
+        "dec_max": -27.552252
+    },
+    "UKIRT_year2016_field22_ccd3_md.tbl": {
+        "ra_min": 271.324101,
+        "ra_max": 271.579441,
+        "dec_min": -27.442122,
+        "dec_max": -27.216711
+    },
+    "UKIRT_year2016_field71_ccd2_md.tbl": {
+        "ra_min": 268.055419,
+        "ra_max": 268.314692,
+        "dec_min": -29.36467,
+        "dec_max": -29.139411
+    },
+    "UKIRT_year2018_field44_ccd3_md.tbl": {
+        "ra_min": 264.084583,
+        "ra_max": 268.569158,
+        "dec_min": -29.297192,
+        "dec_max": -28.080385
+    },
+    "UKIRT_year2017_field43_ccd2_md.tbl": {
+        "ra_min": 264.3372,
+        "ra_max": 268.822973,
+        "dec_min": -29.746054,
+        "dec_max": -28.521644
+    },
+    "UKIRT_year2015_field42_ccd1_md.tbl": {
+        "ra_min": 263.339965,
+        "ra_max": 263.603474,
+        "dec_min": -30.241735,
+        "dec_max": -30.015977
+    },
+    "UKIRT_year2018_field41_ccd1_md.tbl": {
+        "ra_min": 263.564706,
+        "ra_max": 268.066347,
+        "dec_min": -29.957618,
+        "dec_max": -28.742614
+    },
+    "UKIRT_year2016_field52_ccd3_md.tbl": {
+        "ra_min": 269.307884,
+        "ra_max": 269.565929,
+        "dec_min": -28.74383,
+        "dec_max": -28.517297
+    },
+    "UKIRT_year2017_field62_ccd4_md.tbl": {
+        "ra_min": 268.637788,
+        "ra_max": 268.894794,
+        "dec_min": -29.408599,
+        "dec_max": -29.184469
+    },
+    "UKIRT_year2016_field84_ccd1_md.tbl": {
+        "ra_min": 267.551504,
+        "ra_max": 267.807768,
+        "dec_min": -28.258118,
+        "dec_max": -28.032059
+    },
+    "UKIRT_year2017_field12_ccd4_md.tbl": {
+        "ra_min": 265.740995,
+        "ra_max": 267.625399,
+        "dec_min": -28.518263,
+        "dec_max": -26.693548
+    },
+    "UKIRT_year2016_field81_ccd3_md.tbl": {
+        "ra_min": 268.056867,
+        "ra_max": 268.312159,
+        "dec_min": -28.042124,
+        "dec_max": -27.816625
+    },
+    "UKIRT_year2016_field43_ccd2_md.tbl": {
+        "ra_min": 270.302578,
+        "ra_max": 270.560185,
+        "dec_min": -27.944508,
+        "dec_max": -27.718004
+    },
+    "UKIRT_year2017_field52_ccd3_md.tbl": {
+        "ra_min": 268.135359,
+        "ra_max": 268.392912,
+        "dec_min": -29.41282,
+        "dec_max": -29.186469
+    },
+    "UKIRT_year2019_field41_ccd1_md.tbl": {
+        "ra_min": 266.360931,
+        "ra_max": 268.06397,
+        "dec_min": -29.842165,
+        "dec_max": -28.740966
+    },
+    "UKIRT_year2019_field44_ccd3_md.tbl": {
+        "ra_min": 266.879147,
+        "ra_max": 268.572054,
+        "dec_min": -29.183387,
+        "dec_max": -28.082142
+    },
+    "UKIRT_year2016_field33_ccd2_md.tbl": {
+        "ra_min": 270.303343,
+        "ra_max": 270.565882,
+        "dec_min": -28.826342,
+        "dec_max": -28.598518
+    },
+    "UKIRT_year2017_field22_ccd3_md.tbl": {
+        "ra_min": 265.55811,
+        "ra_max": 267.491638,
+        "dec_min": -30.292487,
+        "dec_max": -27.565112
+    },
+    "UKIRT_year2019_field31_ccd1_md.tbl": {
+        "ra_min": 266.803745,
+        "ra_max": 268.370123,
+        "dec_min": -28.962806,
+        "dec_max": -27.85763
+    },
+    "UKIRT_year2019_field34_ccd3_md.tbl": {
+        "ra_min": 267.316173,
+        "ra_max": 268.872036,
+        "dec_min": -28.304545,
+        "dec_max": -27.199116
+    },
+    "UKIRT_year2016_field12_ccd4_md.tbl": {
+        "ra_min": 270.821372,
+        "ra_max": 271.078733,
+        "dec_min": -28.323845,
+        "dec_max": -28.095389
+    },
+    "UKIRT_year2016_field62_ccd4_md.tbl": {
+        "ra_min": 268.807258,
+        "ra_max": 269.061788,
+        "dec_min": -27.857444,
+        "dec_max": -27.630321
+    },
+    "UKIRT_year2015_field12_ccd4_md.tbl": {
+        "ra_min": 265.280285,
+        "ra_max": 265.534314,
+        "dec_min": -27.556624,
+        "dec_max": -27.329805
+    },
+    "UKIRT_year2018_field11_ccd4_md.tbl": {
+        "ra_min": 265.494398,
+        "ra_max": 267.377099,
+        "dec_min": -28.513224,
+        "dec_max": -26.688191
+    },
+    "UKIRT_year2019_field23_ccd4_md.tbl": {
+        "ra_min": 265.615374,
+        "ra_max": 266.985155,
+        "dec_min": -30.068963,
+        "dec_max": -28.947144
+    },
+    "UKIRT_year2018_field61_ccd4_md.tbl": {
+        "ra_min": 268.385071,
+        "ra_max": 268.64205,
+        "dec_min": -29.408565,
+        "dec_max": -29.184343
+    },
+    "UKIRT_year2019_field53_ccd4_md.tbl": {
+        "ra_min": 267.631756,
+        "ra_max": 267.889076,
+        "dec_min": -29.189887,
+        "dec_max": -28.964653
+    },
+    "UKIRT_year2018_field63_ccd3_md.tbl": {
+        "ra_min": 269.145316,
+        "ra_max": 269.405446,
+        "dec_min": -29.189315,
+        "dec_max": -28.96338
+    },
+    "UKIRT_year2019_field54_ccd1_md.tbl": {
+        "ra_min": 267.375268,
+        "ra_max": 267.634558,
+        "dec_min": -29.62757,
+        "dec_max": -29.402933
+    },
+    "UKIRT_year2019_field51_ccd3_md.tbl": {
+        "ra_min": 267.874446,
+        "ra_max": 268.141479,
+        "dec_min": -29.410972,
+        "dec_max": -29.186308
+    },
+    "UKIRT_year2017_field64_ccd2_md.tbl": {
+        "ra_min": 268.893237,
+        "ra_max": 269.153576,
+        "dec_min": -29.628299,
+        "dec_max": -29.401973
+    },
+    "UKIRT_year2017_field42_ccd1_md.tbl": {
+        "ra_min": 263.817259,
+        "ra_max": 268.318244,
+        "dec_min": -29.9674,
+        "dec_max": -28.740999
+    },
+    "UKIRT_year2015_field43_ccd2_md.tbl": {
+        "ra_min": 263.599157,
+        "ra_max": 263.862393,
+        "dec_min": -30.24263,
+        "dec_max": -30.01751
+    },
+    "UKIRT_year2018_field13_ccd3_md.tbl": {
+        "ra_min": 266.243806,
+        "ra_max": 268.127978,
+        "dec_min": -28.29732,
+        "dec_max": -26.472731
+    },
+    "UKIRT_year2019_field24_ccd1_md.tbl": {
+        "ra_min": 265.359242,
+        "ra_max": 266.728607,
+        "dec_min": -30.50664,
+        "dec_max": -29.382596
+    },
+    "UKIRT_year2019_field21_ccd3_md.tbl": {
+        "ra_min": 265.862928,
+        "ra_max": 267.237927,
+        "dec_min": -30.289095,
+        "dec_max": -29.165758
+    },
+    "UKIRT_year2017_field14_ccd2_md.tbl": {
+        "ra_min": 265.997537,
+        "ra_max": 267.883352,
+        "dec_min": -28.732386,
+        "dec_max": -26.906116
+    },
+    "UKIRT_year2017_field32_ccd1_md.tbl": {
+        "ra_min": 264.432932,
+        "ra_max": 268.619292,
+        "dec_min": -29.100055,
+        "dec_max": -27.860213
+    },
+    "UKIRT_year2015_field33_ccd2_md.tbl": {
+        "ra_min": 264.179723,
+        "ra_max": 264.439516,
+        "dec_min": -29.193823,
+        "dec_max": -28.967549
+    },
+    "UKIRT_year2018_field53_ccd4_md.tbl": {
+        "ra_min": 267.630963,
+        "ra_max": 267.887616,
+        "dec_min": -29.190603,
+        "dec_max": -28.966491
+    },
+    "UKIRT_year2019_field61_ccd4_md.tbl": {
+        "ra_min": 268.386409,
+        "ra_max": 268.64358,
+        "dec_min": -29.407858,
+        "dec_max": -29.182455
+    },
+    "UKIRT_year2018_field23_ccd4_md.tbl": {
+        "ra_min": 265.067129,
+        "ra_max": 266.983898,
+        "dec_min": -30.069795,
+        "dec_max": -27.344845
+    },
+    "UKIRT_year2015_field6_ccd3_md.tbl": {
+        "ra_min": 263.765295,
+        "ra_max": 264.018367,
+        "dec_min": -27.113566,
+        "dec_max": -26.88774
+    },
+    "UKIRT_year2019_field11_ccd4_md.tbl": {
+        "ra_min": 265.807111,
+        "ra_max": 267.378274,
+        "dec_min": -28.512377,
+        "dec_max": -27.41518
+    },
+    "UKIRT_year2016_field32_ccd1_md.tbl": {
+        "ra_min": 269.797718,
+        "ra_max": 270.058686,
+        "dec_min": -29.045868,
+        "dec_max": -28.819489
+    },
+    "UKIRT_year2015_field22_ccd3_md.tbl": {
+        "ra_min": 264.779031,
+        "ra_max": 265.033743,
+        "dec_min": -27.557739,
+        "dec_max": -27.333097
+    },
+    "UKIRT_year2018_field21_ccd3_md.tbl": {
+        "ra_min": 265.309546,
+        "ra_max": 267.236889,
+        "dec_min": -30.288587,
+        "dec_max": -27.558254
+    },
+    "UKIRT_year2016_field14_ccd2_md.tbl": {
+        "ra_min": 271.070838,
+        "ra_max": 271.328582,
+        "dec_min": -28.544334,
+        "dec_max": -28.318569
+    },
+    "UKIRT_year2019_field13_ccd3_md.tbl": {
+        "ra_min": 266.562585,
+        "ra_max": 268.129307,
+        "dec_min": -28.299326,
+        "dec_max": -27.200504
+    },
+    "UKIRT_year2018_field24_ccd1_md.tbl": {
+        "ra_min": 264.817622,
+        "ra_max": 266.72946,
+        "dec_min": -30.506825,
+        "dec_max": -27.778698
+    },
+    "UKIRT_year2016_field42_ccd1_md.tbl": {
+        "ra_min": 269.801679,
+        "ra_max": 270.059478,
+        "dec_min": -28.165123,
+        "dec_max": -27.936197
+    },
+    "UKIRT_year2018_field51_ccd3_md.tbl": {
+        "ra_min": 267.882774,
+        "ra_max": 268.140495,
+        "dec_min": -29.410173,
+        "dec_max": -29.184374
+    },
+    "UKIRT_year2016_field64_ccd2_md.tbl": {
+        "ra_min": 269.055153,
+        "ra_max": 269.30931,
+        "dec_min": -28.128719,
+        "dec_max": -27.903481
+    },
+    "UKIRT_year2019_field63_ccd3_md.tbl": {
+        "ra_min": 269.146582,
+        "ra_max": 269.404873,
+        "dec_min": -29.189532,
+        "dec_max": -28.964589
+    },
+    "UKIRT_year2018_field54_ccd1_md.tbl": {
+        "ra_min": 267.377659,
+        "ra_max": 267.635471,
+        "dec_min": -29.628792,
+        "dec_max": -29.404668
+    },
+    "UKIRT_year2019_field24_ccd3_md.tbl": {
+        "ra_min": 265.870195,
+        "ra_max": 267.242107,
+        "dec_min": -30.068631,
+        "dec_max": -28.944716
+    },
+    "UKIRT_year2017_field11_ccd2_md.tbl": {
+        "ra_min": 265.991117,
+        "ra_max": 267.880429,
+        "dec_min": -28.952926,
+        "dec_max": -27.126872
+    },
+    "UKIRT_year2018_field13_ccd1_md.tbl": {
+        "ra_min": 265.748071,
+        "ra_max": 267.629406,
+        "dec_min": -28.737266,
+        "dec_max": -26.913889
+    },
+    "UKIRT_year2016_field23_ccd2_md.tbl": {
+        "ra_min": 271.321615,
+        "ra_max": 271.575862,
+        "dec_min": -27.659852,
+        "dec_max": -27.434686
+    },
+    "UKIRT_year2019_field21_ccd1_md.tbl": {
+        "ra_min": 265.350254,
+        "ra_max": 266.72345,
+        "dec_min": -30.727218,
+        "dec_max": -29.603622
+    },
+    "UKIRT_year2017_field32_ccd3_md.tbl": {
+        "ra_min": 264.937902,
+        "ra_max": 269.118748,
+        "dec_min": -28.660121,
+        "dec_max": -27.419073
+    },
+    "UKIRT_year2019_field54_ccd3_md.tbl": {
+        "ra_min": 267.886849,
+        "ra_max": 268.143473,
+        "dec_min": -29.189568,
+        "dec_max": -28.965266
+    },
+    "UKIRT_year2017_field61_ccd2_md.tbl": {
+        "ra_min": 268.893346,
+        "ra_max": 269.153631,
+        "dec_min": -29.848501,
+        "dec_max": -29.623292
+    },
+    "UKIRT_year2018_field63_ccd1_md.tbl": {
+        "ra_min": 268.637795,
+        "ra_max": 268.898373,
+        "dec_min": -29.629019,
+        "dec_max": -29.404361
+    },
+    "UKIRT_year2016_field53_ccd2_md.tbl": {
+        "ra_min": 269.303185,
+        "ra_max": 269.566202,
+        "dec_min": -28.962625,
+        "dec_max": -28.732946
+    },
+    "UKIRT_year2019_field51_ccd1_md.tbl": {
+        "ra_min": 267.3624,
+        "ra_max": 267.631592,
+        "dec_min": -29.848825,
+        "dec_max": -29.624228
+    },
+    "UKIRT_year2017_field42_ccd3_md.tbl": {
+        "ra_min": 264.326572,
+        "ra_max": 268.822012,
+        "dec_min": -29.527478,
+        "dec_max": -28.300035
+    },
+    "UKIRT_year2016_field72_ccd4_md.tbl": {
+        "ra_min": 267.803521,
+        "ra_max": 268.060568,
+        "dec_min": -28.923512,
+        "dec_max": -28.695349
+    },
+    "UKIRT_year2018_field64_ccd4_md.tbl": {
+        "ra_min": 268.386054,
+        "ra_max": 268.643252,
+        "dec_min": -29.188363,
+        "dec_max": -28.962874
+    },
+    "UKIRT_year2018_field14_ccd4_md.tbl": {
+        "ra_min": 265.50172,
+        "ra_max": 267.380323,
+        "dec_min": -28.292056,
+        "dec_max": -26.467551
+    },
+    "UKIRT_year2017_field53_ccd2_md.tbl": {
+        "ra_min": 268.137818,
+        "ra_max": 268.399633,
+        "dec_min": -29.630563,
+        "dec_max": -29.40351
+    },
+    "UKIRT_year2016_field42_ccd3_md.tbl": {
+        "ra_min": 270.306867,
+        "ra_max": 270.562071,
+        "dec_min": -27.727856,
+        "dec_max": -27.499853
+    },
+    "UKIRT_year2018_field51_ccd1_md.tbl": {
+        "ra_min": 267.37393,
+        "ra_max": 267.632521,
+        "dec_min": -29.850003,
+        "dec_max": -29.625672
+    },
+    "UKIRT_year2018_field54_ccd3_md.tbl": {
+        "ra_min": 267.885374,
+        "ra_max": 268.142326,
+        "dec_min": -29.188972,
+        "dec_max": -28.963399
+    },
+    "UKIRT_year2016_field61_ccd2_md.tbl": {
+        "ra_min": 269.055058,
+        "ra_max": 269.311299,
+        "dec_min": -28.34939,
+        "dec_max": -28.123842
+    },
+    "UKIRT_year2019_field63_ccd1_md.tbl": {
+        "ra_min": 268.635028,
+        "ra_max": 268.897554,
+        "dec_min": -29.627563,
+        "dec_max": -29.402423
+    },
+    "UKIRT_year2017_field23_ccd2_md.tbl": {
+        "ra_min": 265.565705,
+        "ra_max": 267.499182,
+        "dec_min": -30.510028,
+        "dec_max": -27.783227
+    },
+    "UKIRT_year2016_field32_ccd3_md.tbl": {
+        "ra_min": 270.306731,
+        "ra_max": 270.56554,
+        "dec_min": -28.608601,
+        "dec_max": -28.383162
+    },
+    "UKIRT_year2015_field22_ccd1_md.tbl": {
+        "ra_min": 264.275947,
+        "ra_max": 264.532899,
+        "dec_min": -27.995892,
+        "dec_max": -27.770866
+    },
+    "UKIRT_year2018_field21_ccd1_md.tbl": {
+        "ra_min": 264.808893,
+        "ra_max": 266.724379,
+        "dec_min": -30.727874,
+        "dec_max": -27.99931
+    },
+    "UKIRT_year2018_field24_ccd3_md.tbl": {
+        "ra_min": 265.317223,
+        "ra_max": 267.240796,
+        "dec_min": -30.066948,
+        "dec_max": -27.337702
+    },
+    "UKIRT_year2016_field11_ccd2_md.tbl": {
+        "ra_min": 271.070783,
+        "ra_max": 271.32891,
+        "dec_min": -28.764423,
+        "dec_max": -28.539039
+    },
+    "UKIRT_year2019_field13_ccd1_md.tbl": {
+        "ra_min": 266.055403,
+        "ra_max": 267.628723,
+        "dec_min": -28.73729,
+        "dec_max": -27.638176
+    },
+    "UKIRT_year2015_field6_ccd1_md.tbl": {
+        "ra_min": 263.26385,
+        "ra_max": 263.519353,
+        "dec_min": -27.551643,
+        "dec_max": -27.325476
+    },
+    "UKIRT_year2019_field14_ccd4_md.tbl": {
+        "ra_min": 265.813778,
+        "ra_max": 267.382508,
+        "dec_min": -28.291625,
+        "dec_max": -27.194226
+    },
+    "UKIRT_year2019_field64_ccd4_md.tbl": {
+        "ra_min": 268.38712,
+        "ra_max": 268.644782,
+        "dec_min": -29.187704,
+        "dec_max": -28.961122
+    },
+    "UKIRT_year2016_field84_ccd3_md.tbl": {
+        "ra_min": 268.057498,
+        "ra_max": 268.311277,
+        "dec_min": -27.820721,
+        "dec_max": -27.59585
+    },
+    "UKIRT_year2016_field81_ccd1_md.tbl": {
+        "ra_min": 267.549875,
+        "ra_max": 267.807701,
+        "dec_min": -28.479474,
+        "dec_max": -28.253088
+    },
+    "UKIRT_year2018_field33_ccd4_md.tbl": {
+        "ra_min": 264.443533,
+        "ra_max": 268.620412,
+        "dec_min": -28.438447,
+        "dec_max": -27.198368
+    },
+    "UKIRT_year2018_field43_ccd4_md.tbl": {
+        "ra_min": 263.829772,
+        "ra_max": 268.316905,
+        "dec_min": -29.305886,
+        "dec_max": -28.082762
+    },
+    "UKIRT_year2018_field44_ccd1_md.tbl": {
+        "ra_min": 263.576618,
+        "ra_max": 268.066538,
+        "dec_min": -29.737027,
+        "dec_max": -28.521568
+    },
+    "UKIRT_year2018_field62_ccd2_md.tbl": {
+        "ra_min": 269.146191,
+        "ra_max": 269.406485,
+        "dec_min": -29.848503,
+        "dec_max": -29.623394
+    },
+    "UKIRT_year2015_field42_ccd3_md.tbl": {
+        "ra_min": 263.85436,
+        "ra_max": 264.115,
+        "dec_min": -29.803694,
+        "dec_max": -29.578296
+    },
+    "UKIRT_year2016_field74_ccd2_md.tbl": {
+        "ra_min": 268.055227,
+        "ra_max": 268.313928,
+        "dec_min": -29.143871,
+        "dec_max": -28.917932
+    },
+    "UKIRT_year2018_field41_ccd3_md.tbl": {
+        "ra_min": 264.073883,
+        "ra_max": 268.568612,
+        "dec_min": -29.517796,
+        "dec_max": -28.301512
+    },
+    "UKIRT_year2016_field52_ccd1_md.tbl": {
+        "ra_min": 268.79756,
+        "ra_max": 269.058036,
+        "dec_min": -29.181222,
+        "dec_max": -28.953599
+    },
+    "UKIRT_year2018_field34_ccd1_md.tbl": {
+        "ra_min": 264.192455,
+        "ra_max": 268.372175,
+        "dec_min": -28.870993,
+        "dec_max": -27.638328
+    },
+    "UKIRT_year2018_field12_ccd2_md.tbl": {
+        "ra_min": 266.238151,
+        "ra_max": 268.128529,
+        "dec_min": -28.957536,
+        "dec_max": -27.13252
+    },
+    "UKIRT_year2015_field11_ccd2_md.tbl": {
+        "ra_min": 265.776977,
+        "ra_max": 266.032508,
+        "dec_min": -27.777495,
+        "dec_max": -27.552782
+    },
+    "UKIRT_year2018_field31_ccd3_md.tbl": {
+        "ra_min": 264.686988,
+        "ra_max": 268.870256,
+        "dec_min": -28.651984,
+        "dec_max": -27.418072
+    },
+    "UKIRT_year2015_field32_ccd3_md.tbl": {
+        "ra_min": 264.432003,
+        "ra_max": 264.690485,
+        "dec_min": -28.753811,
+        "dec_max": -28.528399
+    },
+    "UKIRT_year2016_field22_ccd1_md.tbl": {
+        "ra_min": 270.820177,
+        "ra_max": 271.077996,
+        "dec_min": -27.879456,
+        "dec_max": -27.653059
+    },
+    "UKIRT_year2019_field43_ccd4_md.tbl": {
+        "ra_min": 266.623647,
+        "ra_max": 268.318408,
+        "dec_min": -29.185439,
+        "dec_max": -28.080993
+    },
+    "UKIRT_year2019_field33_ccd4_md.tbl": {
+        "ra_min": 267.064221,
+        "ra_max": 268.622242,
+        "dec_min": -28.305506,
+        "dec_max": -27.196671
+    },
+    "UKIRT_year2017_field22_ccd1_md.tbl": {
+        "ra_min": 265.057532,
+        "ra_max": 266.979336,
+        "dec_min": -30.73244,
+        "dec_max": -28.006376
+    },
+    "UKIRT_year2019_field31_ccd3_md.tbl": {
+        "ra_min": 267.311939,
+        "ra_max": 268.871735,
+        "dec_min": -28.52491,
+        "dec_max": -27.419743
+    },
+    "UKIRT_year2015_field23_ccd2_md.tbl": {
+        "ra_min": 264.529948,
+        "ra_max": 264.786435,
+        "dec_min": -27.997492,
+        "dec_max": -27.772423
+    },
+    "UKIRT_year2019_field12_ccd2_md.tbl": {
+        "ra_min": 266.559881,
+        "ra_max": 268.126398,
+        "dec_min": -28.958581,
+        "dec_max": -27.860644
+    },
+    "UKIRT_year2019_field34_ccd1_md.tbl": {
+        "ra_min": 266.80921,
+        "ra_max": 268.371399,
+        "dec_min": -28.74244,
+        "dec_max": -27.636807
+    },
+    "UKIRT_year2017_field52_ccd1_md.tbl": {
+        "ra_min": 267.626182,
+        "ra_max": 267.885019,
+        "dec_min": -29.85292,
+        "dec_max": -29.627663
+    },
+    "UKIRT_year2019_field41_ccd3_md.tbl": {
+        "ra_min": 266.873659,
+        "ra_max": 268.569732,
+        "dec_min": -29.404094,
+        "dec_max": -28.303256
+    },
+    "UKIRT_year2019_field62_ccd2_md.tbl": {
+        "ra_min": 269.145271,
+        "ra_max": 269.404114,
+        "dec_min": -29.849122,
+        "dec_max": -29.625139
+    },
+    "UKIRT_year2019_field44_ccd1_md.tbl": {
+        "ra_min": 266.367624,
+        "ra_max": 268.067822,
+        "dec_min": -29.621406,
+        "dec_max": -28.519906
+    }
+}
