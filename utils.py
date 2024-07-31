@@ -397,33 +397,39 @@ def parse_ogle_lightcurve(response):
 
     return lc
 
-def fetch_ukirt_photometry(star_id, star_data, ukirt_index):
+def fetch_ukirt_photometry(star_id, star_data, ukirt_index, src_table_id):
     """
     Function to retrieve the UKIRT photometry for a star from a locally-mounted
     filesystem of the timeseries data from the survey.
 
     :param star_id: Star identifier string
     :param star_data: Dictionary of star attributes
+    :param ukirt_index: Index of lightcurve files
+    :param src_table_id: String identifier for working UKIRT source table
     :return: nirlc Table or None : Timeseries photometry from UKIRT
     """
+
+    hlc = None
+    klc = None
 
     # A star in the catalog may have zero, one or multiple UKIRT catalog entries.
     # The UKIRT sourceid can be used to look-up the file path to each
     # lightcurve from the UKIRT index.
-    hband_lc = []
-    kband_lc = []
-    for usource in star_data['UKIRT_lc_files']:
+    try:
+        k = star_data['UKIRT_source_table'].index(src_table_id + '_md.tbl')
+        usource = star_data['UKIRT_lc_files'][k]
         hid = usource['sourceid'] + '_h_lc.tbl'
         kid = usource['sourceid'] + '_k_lc.tbl'
+
         if hid in ukirt_index.keys():
             hlc = parse_ukirt_lightcurve(ukirt_index[hid])
-            hband_lc.append(hlc)
-
         if kid in ukirt_index.keys():
             klc = parse_ukirt_lightcurve(ukirt_index[kid])
-            kband_lc.append(klc)
 
-    return hband_lc, kband_lc
+    except ValueError:
+        pass
+
+    return hlc, klc
 
 def parse_ukirt_lightcurve(file_path):
     """
@@ -461,7 +467,7 @@ def parse_ukirt_lightcurve(file_path):
     else:
         return None
 
-def output_multiband_lc(args, star_id, star_data, photometry):
+def output_multiband_lc(args, star_id, star_data, hdr, photometry):
     """
     Function to output multi-band photometry datatables as a multi-extension FITS
     binary table.
@@ -475,14 +481,9 @@ def output_multiband_lc(args, star_id, star_data, photometry):
     # Primary file header will contain basic identification information
     # for the star, plus information on the data available from the
     # lightcurve tables
-    hdr = fits.Header()
-    hdr['NAME'] = star_id
-    hdr['RA'] = star_data['RA']
-    hdr['DEC'] = star_data['Dec']
-    hdr['VARTYPE'] = star_data['Type']
     for f,lc in photometry.items():
         if lc:
-            hdr['NDATA_' + f] = len(lc)
+            hdr['NDATA_' + f.replace('LC_','')] = len(lc)
     hdr['VSOURCE'] = 'OGLE'
     hdr['ISOURCE'] = 'OGLE'
     hdr['HSOURCE'] = 'UKIRT'
@@ -493,17 +494,45 @@ def output_multiband_lc(args, star_id, star_data, photometry):
     hdu_list = [fits.PrimaryHDU(header=hdr)]
     for f,lc in photometry.items():
         if lc:
-            hdu_list.append(fits.BinTableHDU(lc, name='LIGHTCURVE_' + f))
+            hdu_list.append(fits.BinTableHDU(lc, name=f))
 
     hdu_list = fits.HDUList(hdu_list)
 
     # Output to disk:
-    file_path = path.join(args.output_dir, star_id + '_multiband_lc.fits')
+    file_path = get_lc_path(args, star_id)
     if not path.isdir(path.dirname(file_path)):
         makedirs(path.dirname(file_path))
     hdu_list.writeto(file_path, overwrite=True)
 
     return file_path
+
+def make_lc_header(star_id, star_data):
+    """
+    Function to generate a standardized lightcurve file header
+    :param star_id:
+    :param star_data:
+    :return: FITS header object
+    """
+
+    hdr = fits.Header()
+    hdr['NAME'] = star_id
+    hdr['RA'] = star_data['RA']
+    hdr['DEC'] = star_data['Dec']
+    hdr['VARTYPE'] = star_data['Type']
+
+    return hdr
+
+
+def get_lc_path(args, star_id):
+    """
+    Function to return a standardized path to a lightcurve file
+    :param args: Program commandline arguments
+    :param star_id: Identifier for star
+    :return:
+    :param file_path: string, path to lightcurve
+    """
+
+    return path.join(args.output_dir, star_id + '_multiband_lc.fits')
 
 def load_multiband_lc(file_path):
     """
@@ -522,7 +551,7 @@ def load_multiband_lc(file_path):
         header = hdu_list[0].header
         lightcurves = {}
         for hdu in hdu_list:
-            if 'LIGHTCURVE' in hdu.name:
+            if 'LC_' in hdu.name:
                 data = [[dp[0], dp[1], dp[2]] for dp in hdu.data]
                 data = np.array(data)
 
