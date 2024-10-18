@@ -47,10 +47,10 @@ def gather_data(args):
         # If there is no existing OGLE photometry, extract it:
         if 'LC_I' not in photometry.keys():
             ogleI, ogleV = utils.fetch_ogle_photometry(star_id, star_data)
-            photometry = {
-                'LC_I': ogleI,
-                'LC_V': ogleV
-            }
+            if len(ogleI) > 0:
+                photometry['LC_I'] = ogleI
+            if len(ogleV) > 0:
+                photometry['LC_V'] = ogleV
 
         # If the star is in the UKIRT catalog, and no existing photometry
         # has been identified for it, extract it:
@@ -62,12 +62,19 @@ def gather_data(args):
             if not check_ukirt_data_included(hdr, photometry, index_file):
                 print('-> Fetching UKIRT timeseries photometry')
                 ukirtH, ukirtK = utils.fetch_ukirt_photometry(star_id, star_data, ukirt_index, src_table_id)
+                print(
+                    '-> Got UKIRT timeseries of lengths H ' + str(len(ukirtH))
+                      + ', K ' + str(len(ukirtK))
+                )
 
                 # Record the UKIRT index file, identifying the extension number for
                 # UKIRT data from this file
-                uid, hdr = record_ukirt_index(hdr, index_file)
-                photometry['LC_H'+str(uid)] = ukirtH
-                photometry['LC_K'+str(uid)] = ukirtK
+                if len(ukirtH) > 0 or len(ukirtK) > 0:
+                    uid, hdr = record_ukirt_index(hdr, index_file)
+                if len(ukirtH) > 0:
+                    photometry['LC_H'+str(uid)] = ukirtH
+                if len(ukirtK) > 0:
+                    photometry['LC_K'+str(uid)] = ukirtK
 
         # Output the (updated) lightcurve
         utils.output_multiband_lc(args, star_id, star_data, hdr, photometry)
