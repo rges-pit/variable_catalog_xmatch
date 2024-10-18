@@ -22,7 +22,6 @@ def gather_data(args):
     # stars that are recorded in the same UKIRT catalog (i.e. same year, same field).
     # Then we extract the lightcurves for each set of stars.
     star_list = sort_stars_by_ukirt_catalog(args, var_catalog)
-    #print(star_list)
 
     # Load UKIRT lightcurve index
     src_table_id = 'UKIRT_year' + args.year + '_field' + args.field + '_ccd' + args.ccd
@@ -38,7 +37,7 @@ def gather_data(args):
         # Check to see if this star has a pre-existing lightcurve available.
         # If so, read it in; new data will be appended to it.
         if check_lightcurve_exists(args, star_id):
-            print('-> Loading existing photometry, if available')
+            print('-> Loading existing photometry')
             hdr, photometry = utils.load_multiband_lc(utils.get_lc_path(args, star_id))
         else:
             hdr = utils.make_lc_header(star_id, star_data)
@@ -47,9 +46,9 @@ def gather_data(args):
         # If there is no existing OGLE photometry, extract it:
         if 'LC_I' not in photometry.keys():
             ogleI, ogleV = utils.fetch_ogle_photometry(star_id, star_data)
-            if len(ogleI) > 0:
+            if ogleI:
                 photometry['LC_I'] = ogleI
-            if len(ogleV) > 0:
+            if ogleV:
                 photometry['LC_V'] = ogleV
 
         # If the star is in the UKIRT catalog, and no existing photometry
@@ -62,18 +61,20 @@ def gather_data(args):
             if not check_ukirt_data_included(hdr, photometry, index_file):
                 print('-> Fetching UKIRT timeseries photometry')
                 ukirtH, ukirtK = utils.fetch_ukirt_photometry(star_id, star_data, ukirt_index, src_table_id)
-                print(
-                    '-> Got UKIRT timeseries of lengths H ' + str(len(ukirtH))
-                      + ', K ' + str(len(ukirtK))
-                )
+                if ukirtH:
+                    print('-> Got UKIRT H-band timeseries of length ' + str(len(ukirtH)))
+                if ukirtK:
+                    print('-> Got UKIRT K-band timeseries of length ' + str(len(ukirtK)))
+                if not ukirtH and not ukirtK:
+                    print('-> No UKIRT data for this object')
 
                 # Record the UKIRT index file, identifying the extension number for
                 # UKIRT data from this file
-                if len(ukirtH) > 0 or len(ukirtK) > 0:
+                if ukirtH or ukirtK:
                     uid, hdr = record_ukirt_index(hdr, index_file)
-                if len(ukirtH) > 0:
+                if ukirtH:
                     photometry['LC_H'+str(uid)] = ukirtH
-                if len(ukirtK) > 0:
+                if ukirtK:
                     photometry['LC_K'+str(uid)] = ukirtK
 
         # Output the (updated) lightcurve
