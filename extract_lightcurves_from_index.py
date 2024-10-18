@@ -32,33 +32,35 @@ def gather_data(args):
     # For each selected star
     for j, star_id in enumerate(star_list):
         star_data = var_catalog[star_id]
+        print('Retrieving photometry for ' + star_id
+              + ', ' + str(j) + ' out of ' + str(len(star_list)) + ' stars')
 
+        # Check to see if this star has a pre-existing lightcurve available.
+        # If so, read it in; new data will be appended to it.
+        if check_lightcurve_exists(args, star_id):
+            print('-> Loading existing photometry, if available')
+            hdr, photometry = utils.load_multiband_lc(utils.get_lc_path(args, star_id))
+        else:
+            hdr = utils.make_lc_header(star_id, star_data)
+            photometry = {}
+
+        # If there is no existing OGLE photometry, extract it:
+        if 'LC_I' not in photometry.keys():
+            ogleI, ogleV = utils.fetch_ogle_photometry(star_id, star_data)
+            photometry = {
+                'LC_I': ogleI,
+                'LC_V': ogleV
+            }
+
+        # If the star is in the UKIRT catalog, and no existing photometry
+        # has been identified for it, extract it:
         if star_data['UKIRT_lc_files']:
-            print('Retrieving photometry for ' + star_id
-                  + ', ' + str(j) + ' out of ' + str(len(star_list)) + ' stars')
-
-            # Check to see if this star has a pre-existing lightcurve available.
-            # If so, read it in; new data will be appended to it.
-            # This is done to efficiently allow UKIRT data from different years to be
-            # included.  As a result, it is assumed that the OGLE data will already
-            # be in the file.
-            if check_lightcurve_exists(args, star_id):
-                hdr, photometry = utils.load_multiband_lc(utils.get_lc_path(args, star_id))
-
-            else:
-                hdr = utils.make_lc_header(star_id, star_data)
-
-                # Harvest OGLE timeseries photometry from online archive
-                ogleI, ogleV = utils.fetch_ogle_photometry(star_id, star_data)
-                photometry = {
-                     'LC_I': ogleI,
-                     'LC_V': ogleV
-                }
 
             # Fetch the UKIRT lightcurve for the star for the working index file
             # (Note this may or may not be in addition to UKIRT data from other years of
             # the survey if the lightcurve preexisted)
-            if not check_ukirt_data_included(hdr, index_file):
+            if not check_ukirt_data_included(hdr, photometry, index_file):
+                print('-> Fetching UKIRT timeseries photometry')
                 ukirtH, ukirtK = utils.fetch_ukirt_photometry(star_id, star_data, ukirt_index, src_table_id)
 
                 # Record the UKIRT index file, identifying the extension number for
@@ -67,10 +69,10 @@ def gather_data(args):
                 photometry['LC_H'+str(uid)] = ukirtH
                 photometry['LC_K'+str(uid)] = ukirtK
 
-            # Output the (updated) lightcurve
-            utils.output_multiband_lc(args, star_id, star_data, hdr, photometry)
+        # Output the (updated) lightcurve
+        utils.output_multiband_lc(args, star_id, star_data, hdr, photometry)
 
-def check_ukirt_data_included(hdr, index_file):
+def check_ukirt_data_included(hdr, photometry, index_file):
     """
     Function to check that data from the working UKIRT index file hasn't already
     been included in the lightcurve.
@@ -83,7 +85,9 @@ def check_ukirt_data_included(hdr, index_file):
 
     for key, value in hdr.items():
         if 'UKSRC' in key and path.basename(index_file) in value:
-            status = True
+            uid = str(key[-1:])
+            if 'LC_H'+uid in photometry.keys() or 'LC_K'+uid in photometry.keys():
+                status = True
 
     return status
 
