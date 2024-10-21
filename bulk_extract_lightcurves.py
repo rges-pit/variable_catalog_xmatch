@@ -12,6 +12,7 @@ class Config():
         self.year = None
         self.field = None
         self.ccd = None
+        self.star_type = None
         self.output_dir = None
 
 def run_extraction(args):
@@ -41,6 +42,7 @@ def run_extraction(args):
                     conf.year = str(yr)
                     conf.field = str(field)
                     conf.ccd = str(ccd)
+                    conf.star_type = args.star_type
                     conf.output_dir = args.output_dir
 
                     extract_lightcurves_from_index.gather_data(conf)
