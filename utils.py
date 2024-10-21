@@ -343,6 +343,8 @@ def fetch_ogle_photometry(star_id, star_data):
         phot_dir = 'hb/phot'
     elif star_data['Type'] == 'rrlyrae':
         phot_dir = 'rrlyr/phot'
+    elif star_data['Type'] == 't2cep':
+        phot_dir = 't2cep/phot'
     else:
         phot_dir = ''
 
