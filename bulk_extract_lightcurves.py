@@ -49,6 +49,7 @@ def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('var_catalog_file', help='Path to variable input catalog')
     parser.add_argument('ukirt_index_dir', help='Path to top-level UKIRT lightcurve index directory')
+    parser.add_argument('star_type', help='Type of variable to extract or ALL')
     parser.add_argument('output_dir', help='Path to output data directory')
     args = parser.parse_args()
 
