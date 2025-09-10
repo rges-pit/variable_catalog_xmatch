@@ -4,7 +4,6 @@
 from astropy import units as u
 from astropy.coordinates import SkyCoord
 from astropy.table import Table, Column
-import rges_survey_definition
 import argparse
 from os import path
 import utils
@@ -23,6 +22,7 @@ config = {
         'hb': {'file': 'ogle4_hb.dat', 'columns': {
             'name': 0, 'ra': [2, 3, 4], 'dec': [5, 6, 7]
         }},
+        'cv': {'file': 'ogle4_CV.dat', 'columns': {'name': 0, 'ra': 1, 'dec': 2}},
         'rrlyrae': {'file': 'ogle4_rrlyrae.dat', 'columns': {'name': 0, 'ra': 2, 'dec': 3}},
     }
 }
