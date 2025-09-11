@@ -22,6 +22,7 @@ config = {
         'hb': {'file': 'ogle4_hb.dat', 'columns': {
             'name': 0, 'ra': [2, 3, 4], 'dec': [5, 6, 7]
         }},
+        'dn': {'file': 'ogle4_DN.dat', 'columns': {'name': 0, 'ra': 1, 'dec': 2}},
         'cv': {'file': 'ogle4_CV.dat', 'columns': {'name': 0, 'ra': 1, 'dec': 2}},
         'rrlyrae': {'file': 'ogle4_rrlyrae.dat', 'columns': {'name': 0, 'ra': 2, 'dec': 3}},
     }
