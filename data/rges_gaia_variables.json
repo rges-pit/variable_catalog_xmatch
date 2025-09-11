@@ -1,0 +1,42 @@
+{
+    "Gaia23bmq": {
+        "Type": "bestar",
+        "RA": 271.06865,
+        "Dec": -32.42201
+    },
+    "Gaia23bbf": {
+        "Type": "bestar",
+        "RA": 265.27038,
+        "Dec": -28.25107
+    },
+    "Gaia22edx": {
+        "Type": "bestar",
+        "RA": 269.9881,
+        "Dec": -28.8941
+    },
+    "Gaia22bhv": {
+        "Type": "bestar",
+        "RA": 268.55345,
+        "Dec": -30.21468
+    },
+    "Gaia22bhb": {
+        "Type": "bestar",
+        "RA": 269.35759,
+        "Dec": -28.25515
+    },
+    "Gaia22ava": {
+        "Type": "bestar",
+        "RA": 270.12729,
+        "Dec": -27.63073
+    },
+    "Gaia21axh": {
+        "Type": "bestar",
+        "RA": 264.98643,
+        "Dec": -32.5076
+    },
+    "Gaia19dru": {
+        "Type": "bestar",
+        "RA": 268.59182,
+        "Dec": -28.71534
+    }
+}
