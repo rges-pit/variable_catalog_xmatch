@@ -163,3 +163,4 @@ cython_debug/
 
 # Files not to be included
 prototypes/
+data/*.json
