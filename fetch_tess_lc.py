@@ -41,7 +41,7 @@ def get_TESS_lc_from_MAST(args, tic_id):
     # data products of all cadences.
     mission_results = Observations.query_criteria(obs_collection="TESS",
                                                     target_name=tic_id)
-    
+
     # Get list of corresponding data products
     mission_products = Observations.get_product_list(mission_results)
 
