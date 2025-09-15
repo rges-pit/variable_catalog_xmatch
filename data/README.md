@@ -10,8 +10,8 @@ variable stars identified in the OGLE-IV survey.
 Access to these catalogs is provided courtesy of the OGLE team [here](https://www.astrouw.edu.pl/ogle/ogle4/OCVS/blg/). 
 
 For clarity in this repository the files have been renamed as follows:
-[https://www.astrouw.edu.pl/ogle/ogle4/OCVS/blg/cep/ident.dat](ogle4_cephieds.dat)
-[https://www.astrouw.edu.pl/ogle/ogle4/OCVS/blg/t2cep/ident.dat](ogle4_cephieds_type2.dat)
+[https://www.astrouw.edu.pl/ogle/ogle4/OCVS/blg/cep/ident.dat](ogle4_cepheids.dat)
+[https://www.astrouw.edu.pl/ogle/ogle4/OCVS/blg/t2cep/ident.dat](ogle4_cepheids_type2.dat)
 [https://www.astrouw.edu.pl/ogle/ogle4/OCVS/blg/rrlyr/ident.dat](ogle4_rrlyrae.dat)
 [https://www.astrouw.edu.pl/ogle/ogle4/OCVS/blg/lpv/ident.dat](ogle4_LPV.dat)
 [https://www.astrouw.edu.pl/ogle/ogle4/OCVS/blg/dsct/ident.dat](ogle4_delta_scuti.dat)

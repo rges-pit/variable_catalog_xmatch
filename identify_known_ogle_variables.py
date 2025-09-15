@@ -15,8 +15,8 @@ config = {
     'data_dir': './data/',
     'variable_catalogs': {
         'lpv': {'file': 'ogle4_LPV.dat', 'columns': {'name': 0, 'ra': 2, 'dec': 3}},
-        'cephied': {'file': 'ogle4_cephieds.dat', 'columns': {'name': 0, 'ra': 2, 'dec': 3}},
-        'cephied_type2': {'file': 'ogle4_cephieds_type2.dat', 'columns': {'name': 0, 'ra': 2, 'dec': 3}},
+        'cepheid': {'file': 'ogle4_cepheids.dat', 'columns': {'name': 0, 'ra': 2, 'dec': 3}},
+        'cepheid_type2': {'file': 'ogle4_cepheids_type2.dat', 'columns': {'name': 0, 'ra': 2, 'dec': 3}},
         'delta_scuti': {'file': 'ogle4_delta_scuti.dat', 'columns': {'name': 0, 'ra': 2, 'dec': 3}},
         'eclipsing_binary': {'file': 'ogle4_eclipsing_binaries.dat', 'columns': {'name': 0, 'ra': 2, 'dec': 3}},
         'hb': {'file': 'ogle4_hb.dat', 'columns': {

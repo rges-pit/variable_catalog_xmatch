@@ -30,7 +30,7 @@ def find_vvv_variables(args, config):
     :return: None, outputs JSON-format catalog
     """
 
-    # Load and combine the lists of OGLE4 variables of different types
+    # Load and combine the lists of VVV variables of different types
     vvv_catalog = load_vvv_variable_catalogs(config)
 
     # Identify those objects within the field of view of all given fields
