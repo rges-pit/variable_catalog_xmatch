@@ -1,11 +1,8 @@
 # Program to compile a list of variable stars identified from the VVV survey
 # within a specific set of pointings.
 
-from astropy import units as u
-from astropy.coordinates import SkyCoord
 from astropy.table import Table, Column
 from astropy.io import fits
-import rges_survey_definition
 import argparse
 from os import path
 import utils

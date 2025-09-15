@@ -6,44 +6,61 @@
 
 from os import path
 import argparse
-import json
 from astropy.coordinates import SkyCoord
 from astropy import units as u
-from astroquery.mast import Tesscut, Observations, Catalogs
-
-# Published catalogs of known variables based on TESS data
-# Gunther et al. (2020), AJ, 159, 60
-# https://ui.adsabs.harvard.edu/abs/2020AJ....159...60G/abstract
-# Medina et al. (2020), ApJ, 905, 107
-# https://ui.adsabs.harvard.edu/abs/2020ApJ...905..107M/abstract
+from astroquery.mast import Observations
+import utils
 
 def download_lc(args):
 
-    # Load catalogs of published variable stars.  Naturally these are in different
-    # formats, hence the separate load functions
-    var_stars = {}
-    var_stars = load_catalog(args, var_stars, 'Gunther')
-    var_stars = load_catalog(args, var_stars, 'Medina')
-    print('Loaded a total of ' + str(len(var_stars))
+    # Load catalog of TESS published variable stars.
+    tess_catalog = utils.load_json_catalog_as_table(args.tess_cat_file, decimal_degrees=True)
+    print('Loaded a total of ' + str(len(tess_catalog))
           + ' known flare stars from published catalogs')
 
+    # Query the MAST archive for TESS lightcurve data products for the stars
+    # in this catalog
+    for j in range(0, len(tess_catalog), 1):
+        tic_id = tess_catalog['Name'][j]
+        print('Downloading lightcurves for star ', tic_id)
+        manifest = get_TESS_lc_from_MAST(args, tic_id)
+
+def get_TESS_lc_from_MAST(args, tic_id):
+    """
+    Function to query the MAST catalog for FAST cadence lightcurves
+    for a given TIC identifier.
+
+    :param args: Argument parser object
+    :param tic_id: integer TESS Input Catalog identitier
+    :return: mission_manifest, Table, list of downloaded dataproducts for one star
+    """
+
     # Fetch lightcurves for the selected stars from MAST
-    tic_id = '254231212'
-    mission_res = Observations.query_criteria(obs_collection="TESS",
-                                              target_name=tic_id)
+    # MAST doesn't seem to support queries to identify specific data products,
+    # so this query serves a list of all related lightcurve and target pixel
+    # data products of all cadences.
+    mission_results = Observations.query_criteria(obs_collection="TESS",
+                                                    target_name=tic_id)
 
     # Get list of corresponding data products
-    mission_products = Observations.get_product_list(mission_res)
-    #mission_products.pprint_all()
+    mission_products = Observations.get_product_list(mission_results)
+
+    # Downselect from the table to identify the fast cadence lightcurves only
+    # _lc.fits, _fast-lc.fits indicate 2min and 20s cadence lightcurves
+    # FAST-LC selects the higher-cadence lightcurves as opposed to the target
+    # pixel products
+    # This often produces multiple individual lightcurves corresponding to
+    # different observation sectors
+    idx = mission_products['productSubGroupDescription'] == 'FAST-LC'
 
     # Download the lightcurve data products
-    # Specify lightcurve only not target pixel products
-    # _lc.fits, _fast-lc.fits indicate 2min and 20s cadence lightcurves
     # PDCSAP_FLUX = flux series that has the common instrumental systematics removed
-    mission_manifest = Observations.download_products(mission_products, download_dir=args.output_dir)
-    mission_manifest.pprint_all()
+    mission_manifest = Observations.download_products(
+        mission_products[idx],
+        download_dir=args.output_dir
+    )
 
-#def fetch_mast_lc(tic, ):
+    return mission_manifest
 
 def load_catalog(args, var_stars, cat_name):
 
@@ -89,7 +106,7 @@ def load_catalog(args, var_stars, cat_name):
 def get_args():
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('data_dir', help='Path to input data directory')
+    parser.add_argument('tess_cat_file', help='Path to TESS catalog of stars')
     parser.add_argument('output_dir', help='Path to output data directory')
 
     args = parser.parse_args()
