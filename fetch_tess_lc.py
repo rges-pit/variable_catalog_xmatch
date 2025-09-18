@@ -14,16 +14,24 @@ import utils
 def download_lc(args):
 
     # Load catalog of TESS published variable stars.
-    tess_catalog = utils.load_json_catalog_as_table(args.tess_cat_file, decimal_degrees=True)
+    tess_catalog = utils.load_json_catalog(args.tess_cat_file, decimal_degrees=True)
     print('Loaded a total of ' + str(len(tess_catalog))
           + ' known flare stars from published catalogs')
 
     # Query the MAST archive for TESS lightcurve data products for the stars
     # in this catalog
-    for j in range(0, len(tess_catalog), 1):
-        tic_id = tess_catalog['Name'][j]
+    for tic_id, params in tess_catalog.items():
         print('Downloading lightcurves for star ', tic_id)
         manifest = get_TESS_lc_from_MAST(args, tic_id)
+        if manifest:
+            params['lc_files'] = [path.basename(f) for f in manifest['Local Path']]
+        else:
+            params['lc_files'] = []
+        tess_catalog[tic_id] = params
+
+    # Output updated catalog
+    utils.output_json_catalog_from_dict(tess_catalog, args.tess_cat_file)
+
 
 def get_TESS_lc_from_MAST(args, tic_id):
     """
@@ -43,24 +51,29 @@ def get_TESS_lc_from_MAST(args, tic_id):
                                                     target_name=tic_id)
 
     # Get list of corresponding data products
-    mission_products = Observations.get_product_list(mission_results)
+    print(mission_results)
+    if mission_results:
+        mission_products = Observations.get_product_list(mission_results)
 
-    # Downselect from the table to identify the fast cadence lightcurves only
-    # _lc.fits, _fast-lc.fits indicate 2min and 20s cadence lightcurves
-    # FAST-LC selects the higher-cadence lightcurves as opposed to the target
-    # pixel products
-    # This often produces multiple individual lightcurves corresponding to
-    # different observation sectors
-    idx = mission_products['productSubGroupDescription'] == 'FAST-LC'
+        # Downselect from the table to identify the fast cadence lightcurves only
+        # _lc.fits, _fast-lc.fits indicate 2min and 20s cadence lightcurves
+        # FAST-LC selects the higher-cadence lightcurves as opposed to the target
+        # pixel products
+        # This often produces multiple individual lightcurves corresponding to
+        # different observation sectors
+        idx = mission_products['productSubGroupDescription'] == 'FAST-LC'
 
-    # Download the lightcurve data products
-    # PDCSAP_FLUX = flux series that has the common instrumental systematics removed
-    mission_manifest = Observations.download_products(
-        mission_products[idx],
-        download_dir=args.output_dir
-    )
+        # Download the lightcurve data products
+        # PDCSAP_FLUX = flux series that has the common instrumental systematics removed
+        mission_manifest = Observations.download_products(
+            mission_products[idx],
+            download_dir=args.output_dir
+        )
 
-    return mission_manifest
+        return mission_manifest
+
+    else:
+        None
 
 def load_catalog(args, var_stars, cat_name):
 
