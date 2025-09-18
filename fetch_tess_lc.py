@@ -54,7 +54,6 @@ def get_TESS_lc_from_MAST(args, tic_id):
     idx = mission_products['productSubGroupDescription'] == 'FAST-LC'
 
     # Download the lightcurve data products
-    # PDCSAP_FLUX = flux series that has the common instrumental systematics removed
     mission_manifest = Observations.download_products(
         mission_products[idx],
         download_dir=args.output_dir

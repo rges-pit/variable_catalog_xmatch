@@ -468,6 +468,58 @@ def parse_ukirt_lightcurve(file_path):
 
     else:
         return None
+def load_tess_lcs_for_star(args, tic_id, params):
+    """
+    Function to load one or more TESS lightcurves into a data array.
+    This uses the PDCSAP_FLUX = flux series that has the common instrumental
+    systematics removed.
+
+    :param args: Arguments object
+    :param tic_id: int  TESS Input Catalog identifier
+    :param params: dict parameters of the star, including the filenames of any
+                    lightcurves downloaded
+    :return:
+        lc Table Table of combined photometry from all lightcurves
+        header_info: dict parameters to be added to the FITS header
+    """
+
+    if 'lc_files' not in params.keys() \
+            or len(params['lc_files']) == 0:
+        print('No lightcurves available to unpack for TIC ' + str(tic_id))
+        return None, None
+
+    data = {'BTJD': [], 'PDCSAP_FLUX': [], 'PDCSAP_FLUX_ERR': []}
+    header_info = {'sectors': [], 'ccds': []}
+    for lc_file in params['lc_files']:
+        # Load the TESS format lightcurve
+        with fits.open(path.join(args.input_dir, lc_file)) as hdul:
+            header_info['sectors'].append(hdul[0].header['SECTOR'])
+            header_info['ccds'].append(hdul[0].header['CCD'])
+            for row in hdul[1].data:
+                # Select only those lightcurve entries where the Quality flag
+                # does not indicate a spacecraft operational issue.
+                if row[9] == 0:
+                    data['BTJD'].append(float(row[0]))
+                    data['PDCSAP_FLUX'].append(float(row[7]))
+                    data['PDCSAP_FLUX_ERR'].append(float(row[8]))
+
+    # Convert fluxes to magnitudes.  Zeropoint derived from
+    # https://heasarc.gsfc.nasa.gov/docs/tess/faq.html
+    tmag = 20.44 - 2.5*np.log10(np.array(data['PDCSAP_FLUX']))
+    tmag_err = (2.5 / np.log(10.0)) * np.array(data['PDCSAP_FLUX_ERR']) / np.array(data['PDCSAP_FLUX'])
+
+    lc = Table(
+        [
+            Column(name='BTJD', data=data['BTJD']),
+            Column(name='mag', data=tmag),
+            Column(name='mag_err', data=tmag_err),
+            Column(name='PDCSAP_FLUX', data=data['PDCSAP_FLUX']),
+            Column(name='PDCSAP_FLUX_ERR', data=data['PDCSAP_FLUX_ERR'])
+        ]
+    )
+    lc.sort(['BTJD'])
+
+    return lc, header_info
 
 def output_multiband_lc(args, star_id, star_data, hdr, photometry):
     """
