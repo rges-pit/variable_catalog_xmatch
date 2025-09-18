@@ -51,7 +51,6 @@ def get_TESS_lc_from_MAST(args, tic_id):
                                                     target_name=tic_id)
 
     # Get list of corresponding data products
-    print(mission_results)
     if mission_results:
         mission_products = Observations.get_product_list(mission_results)
 
@@ -69,7 +68,6 @@ def get_TESS_lc_from_MAST(args, tic_id):
             mission_products[idx],
             download_dir=args.output_dir
         )
-
         return mission_manifest
 
     else:
