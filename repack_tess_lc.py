@@ -21,13 +21,15 @@ def run(args):
     for tic_id, params in tess_catalog.items():
 
         # Each object may have multiple TESS lightcurves from different survey passes
-        lc_data, hdr_info = utils.load_tess_lcs_for_star(args, tic_id, params)
+        photometry, headers = utils.load_tess_lcs_for_star(args, tic_id, params)
 
         # Output to standard format lightcurve
-        if lc_data:
+        if photometry:
             hdr = utils.make_lc_header(tic_id, params)
+            for lcid, header_info in headers.items():
+                hdr['SECTOR' + lcid] = header_info['sector']
+                hdr['CCD' + lcid] = header_info['ccd']
 
-            photometry = {'TESS': lc_data}
             utils.output_multiband_lc(args, tic_id, params, hdr, photometry)
 
 def get_args():

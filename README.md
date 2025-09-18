@@ -51,6 +51,9 @@ multiple table extensions, one for each lightcurve in the available passbands.
 These extensions may include one or more of OGLE (I-band), OGLE (V-band), UKIRT (H-band), 
 UKIRT (K-band).
 
+## TESS lightcurves of Flare stars
+Since no public catalog of flare stars was easily available 
+
 ## Utilities
 The library also contains a number of utility functions in utils.py which are of general use.  
 These include functions for reading and writing the various catalog and lightcurve files produced. 
