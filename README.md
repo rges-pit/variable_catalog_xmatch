@@ -51,8 +51,13 @@ multiple table extensions, one for each lightcurve in the available passbands.
 These extensions may include one or more of OGLE (I-band), OGLE (V-band), UKIRT (H-band), 
 UKIRT (K-band).
 
-## TESS lightcurves of Flare stars
-Since no public catalog of flare stars was easily available 
+## TESS lightcurves of flare stars
+Since no public catalog of flare stars was easily available from the above surveys, we combined the 
+catalogs published by [Gunther et al. (2020), AJ, 159, 60](https://ui.adsabs.harvard.edu/abs/2020AJ....159...60G/abstract) 
+and [Medina et al. (2020), ApJ, 905, 107](https://ui.adsabs.harvard.edu/abs/2020ApJ...905..107M/abstract) based on 
+data from NASA's TESS Mission.  The data for these objects was extracted from the MAST Archive and 
+repackaged to be consistent with the other catalogs.  A machine-readable catalog of these stars and 
+their corresponding lightcurves can be found in tess_flare_stars.json. 
 
 ## Utilities
 The library also contains a number of utility functions in utils.py which are of general use.  
