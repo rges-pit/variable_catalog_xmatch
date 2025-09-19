@@ -495,36 +495,40 @@ def load_tess_lcs_for_star(args, tic_id, params):
         header_info = {'sector': None, 'ccd': None}
 
         # Load the TESS format lightcurve
-        with fits.open(path.join(args.input_dir, lc_file)) as hdul:
-            header_info['sector'] = hdul[0].header['SECTOR']
-            header_info['ccd'] = hdul[0].header['CCD']
-            for row in hdul[1].data:
-                # Select only those lightcurve entries where the Quality flag
-                # does not indicate a spacecraft operational issue.
-                if row[9] == 0:
-                    data['BTJD'].append(float(row[0]))
-                    data['PDCSAP_FLUX'].append(float(row[7]))
-                    data['PDCSAP_FLUX_ERR'].append(float(row[8]))
+        try:
+            with fits.open(path.join(args.input_dir, lc_file)) as hdul:
+                header_info['sector'] = hdul[0].header['SECTOR']
+                header_info['ccd'] = hdul[0].header['CCD']
+                for row in hdul[1].data:
+                    # Select only those lightcurve entries where the Quality flag
+                    # does not indicate a spacecraft operational issue.
+                    if row[9] == 0:
+                        data['BTJD'].append(float(row[0]))
+                        data['PDCSAP_FLUX'].append(float(row[7]))
+                        data['PDCSAP_FLUX_ERR'].append(float(row[8]))
 
-        # Convert fluxes to magnitudes.  Zeropoint derived from
-        # https://heasarc.gsfc.nasa.gov/docs/tess/faq.html
-        tmag = 20.44 - 2.5*np.log10(np.array(data['PDCSAP_FLUX']))
-        tmag_err = (2.5 / np.log(10.0)) * np.array(data['PDCSAP_FLUX_ERR']) / np.array(data['PDCSAP_FLUX'])
+            # Convert fluxes to magnitudes.  Zeropoint derived from
+            # https://heasarc.gsfc.nasa.gov/docs/tess/faq.html
+            tmag = 20.44 - 2.5*np.log10(np.array(data['PDCSAP_FLUX']))
+            tmag_err = (2.5 / np.log(10.0)) * np.array(data['PDCSAP_FLUX_ERR']) / np.array(data['PDCSAP_FLUX'])
 
-        lc = Table(
-            [
-                Column(name='BTJD', data=data['BTJD']),
-                Column(name='mag', data=tmag),
-                Column(name='mag_err', data=tmag_err),
-                Column(name='PDCSAP_FLUX', data=data['PDCSAP_FLUX']),
-                Column(name='PDCSAP_FLUX_ERR', data=data['PDCSAP_FLUX_ERR'])
-            ]
-        )
-        lc.sort(['BTJD'])
+            lc = Table(
+                [
+                    Column(name='BTJD', data=data['BTJD']),
+                    Column(name='mag', data=tmag),
+                    Column(name='mag_err', data=tmag_err),
+                    Column(name='PDCSAP_FLUX', data=data['PDCSAP_FLUX']),
+                    Column(name='PDCSAP_FLUX_ERR', data=data['PDCSAP_FLUX_ERR'])
+                ]
+            )
+            lc.sort(['BTJD'])
 
-        lc_idx = len(photometry)
-        photometry['T' + str(lc_idx)] = lc
-        headers['T' + str(lc_idx)] = header_info
+            lc_idx = len(photometry)
+            photometry[str(lc_idx)] = lc
+            headers[str(lc_idx)] = header_info
+
+        except OSError as e:
+            print('Error loading input lightcurve ' + lc_file + ' for TIC' + str(tic_id))
 
     return photometry, headers
 

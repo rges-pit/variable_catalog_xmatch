@@ -31,6 +31,7 @@ def run(args):
                 hdr['CCD' + lcid] = header_info['ccd']
 
             utils.output_multiband_lc(args, tic_id, params, hdr, photometry)
+            print('Output lightcurve for TIC' + str(tic_id))
 
 def get_args():
     parser = argparse.ArgumentParser()
