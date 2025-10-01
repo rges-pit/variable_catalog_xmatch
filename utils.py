@@ -399,6 +399,29 @@ def parse_ogle_lightcurve(response):
 
     return lc
 
+def parse_ogle_lc_file(lc_file):
+    """
+    Function to parse an OGLE-format lightcurve file
+
+    :param lc_file: str  Path to file
+    :return: Table of timeseries photometry
+    """
+
+    if not path.isfile(lc_file):
+        raise IOError('Cannot find OGLE lightcurve file ' + lc_file)
+
+    data = np.loadtxt(lc_file)
+
+    lc = Table(
+        [
+            Column(name='HJD', data=data[:, 0] + 2450000.0),
+            Column(name='mag', data=data[:, 1]),
+            Column(name='mag_error', data=data[:, 2])
+        ]
+    )
+
+    return lc
+
 def fetch_ukirt_photometry(star_id, star_data, ukirt_index, src_table_id):
     """
     Function to retrieve the UKIRT photometry for a star from a locally-mounted
@@ -532,13 +555,12 @@ def load_tess_lcs_for_star(args, tic_id, params):
 
     return photometry, headers
 
-def output_multiband_lc(args, star_id, star_data, hdr, photometry):
+def output_multiband_lc(args, star_id, hdr, photometry):
     """
     Function to output multi-band photometry datatables as a multi-extension FITS
     binary table.
 
     :param star_id: Star identifier string
-    :param star_data: Dictionary of star attributes
     :param photometry: dict of available lightcurve data Tables
     :return: None, outputs to FITS file
     """

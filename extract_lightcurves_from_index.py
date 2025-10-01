@@ -86,7 +86,7 @@ def gather_data(args):
 
             # Output the (updated) lightcurve
             if len(photometry) > 0:
-                utils.output_multiband_lc(args, star_id, star_data, hdr, photometry)
+                utils.output_multiband_lc(args, star_id, hdr, photometry)
             else:
                 print(' -> No photometry to output')
 
