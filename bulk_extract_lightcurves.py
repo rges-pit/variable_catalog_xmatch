@@ -25,7 +25,7 @@ def run_extraction(args):
     """
 
     # Configuration
-    years = range(2015, 2018, 1)
+    years = range(2015, 2019, 1)
     fields = range(1, 65, 1)
     ccds = range(1, 5, 1)
 

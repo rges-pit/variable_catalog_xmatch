@@ -345,33 +345,56 @@ def fetch_ogle_photometry(star_id, star_data):
         phot_dir = 'rrlyr/phot'
     elif star_data['Type'] == 'cephied_type2':
         phot_dir = 't2cep/phot'
+    elif star_data['Type'] == 'rot':
+        phot_dir = 'rot/phot_ogle4'
+    elif star_data['Type'] == 'transits':
+        phot_dir = 'transits/phot_ogle4'
+    elif star_data['Type'] == 'blap':
+        ARCHIVE_ROOT = 'https://www.astrouw.edu.pl/ogle/ogle4/OCVS/'
+        phot_dir = 'BLAP/phot/phot_ogle4'
+    elif star_data['Type'] == 'cv' or star_data['Type'] == 'dn':
+        ARCHIVE_ROOT = None
+        phot_dir = '/data/Roman/rges_variables_wg/OGLE_lightcurves'
     else:
         phot_dir = ''
 
-    idata_url = path.join(
-        ARCHIVE_ROOT,
-        phot_dir, 'I',
-        star_id+'.dat'
-    )
-    vdata_url = path.join(
-        ARCHIVE_ROOT,
-        phot_dir, 'V',
-        star_id+'.dat'
-    )
+    # Access data by downloading from the OGLE online archive
+    if ARCHIVE_ROOT:
+        idata_url = path.join(
+            ARCHIVE_ROOT,
+            phot_dir, 'I',
+            star_id+'.dat'
+        )
+        vdata_url = path.join(
+            ARCHIVE_ROOT,
+            phot_dir, 'V',
+            star_id+'.dat'
+        )
 
-    # Check whether the corresponding lightcurve datafile is available at the
-    # URLs for each bandpass.  If they are, download the data
-    response = requests.get(idata_url)
-    if response.status_code == 200:
-        ilc = parse_ogle_lightcurve(response)
-    else:
-        ilc = None
+        # Check whether the corresponding lightcurve datafile is available at the
+        # URLs for each bandpass.  If they are, download the data
+        response = requests.get(idata_url)
+        if response.status_code == 200:
+            ilc = parse_ogle_lightcurve(response)
+        else:
+            ilc = None
 
-    response = requests.get(vdata_url)
-    if response.status_code == 200:
-        vlc = parse_ogle_lightcurve(response)
+        response = requests.get(vdata_url)
+        if response.status_code == 200:
+            vlc = parse_ogle_lightcurve(response)
+        else:
+            vlc = None
+
+    # Access data from OGLE tarballs downloaded and unpacked to local disk
+    # This was done for CVs/DN and the tarballs contained only I-band data
     else:
         vlc = None
+
+        lc_file = path.join(phot_dir, star_id + '.dat')
+        if path.isfile(lc_file):
+            ilc = parse_ogle_lc_file(lc_file)
+        else:
+            ilc = None
 
     return ilc, vlc
 

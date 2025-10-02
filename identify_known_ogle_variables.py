@@ -9,24 +9,28 @@ from os import path
 import utils
 
 
-# Configuration
-# Location of data files of known OGLE variable catalogs
-config = {
-    'data_dir': './data/',
-    'variable_catalogs': {
-        'lpv': {'file': 'ogle4_LPV.dat', 'columns': {'name': 0, 'ra': 2, 'dec': 3}},
-        'cepheid': {'file': 'ogle4_cepheids.dat', 'columns': {'name': 0, 'ra': 2, 'dec': 3}},
-        'cepheid_type2': {'file': 'ogle4_cepheids_type2.dat', 'columns': {'name': 0, 'ra': 2, 'dec': 3}},
-        'delta_scuti': {'file': 'ogle4_delta_scuti.dat', 'columns': {'name': 0, 'ra': 2, 'dec': 3}},
-        'eclipsing_binary': {'file': 'ogle4_eclipsing_binaries.dat', 'columns': {'name': 0, 'ra': 2, 'dec': 3}},
-        'hb': {'file': 'ogle4_hb.dat', 'columns': {
-            'name': 0, 'ra': [2, 3, 4], 'dec': [5, 6, 7]
-        }},
-        'dn': {'file': 'ogle4_DN.dat', 'columns': {'name': 0, 'ra': 1, 'dec': 2}},
-        'cv': {'file': 'ogle4_CV.dat', 'columns': {'name': 0, 'ra': 1, 'dec': 2}},
-        'rrlyrae': {'file': 'ogle4_rrlyrae.dat', 'columns': {'name': 0, 'ra': 2, 'dec': 3}},
+def load_config():
+    # Location of data files of known OGLE variable catalogs
+    config = {
+        'data_dir': './data/',
+        'variable_catalogs': {
+            'lpv': {'file': 'ogle4_LPV.dat', 'columns': {'name': 0, 'ra': 2, 'dec': 3}},
+            'cepheid': {'file': 'ogle4_cepheids.dat', 'columns': {'name': 0, 'ra': 2, 'dec': 3}},
+            'cepheid_type2': {'file': 'ogle4_cepheids_type2.dat', 'columns': {'name': 0, 'ra': 2, 'dec': 3}},
+            'delta_scuti': {'file': 'ogle4_delta_scuti.dat', 'columns': {'name': 0, 'ra': 2, 'dec': 3}},
+            'eclipsing_binary': {'file': 'ogle4_eclipsing_binaries.dat', 'columns': {'name': 0, 'ra': 2, 'dec': 3}},
+            'hb': {'file': 'ogle4_hb.dat', 'columns': {
+                'name': 0, 'ra': [2, 3, 4], 'dec': [5, 6, 7]
+            }},
+            'dn': {'file': 'ogle4_DN.dat', 'columns': {'name': 0, 'ra': 1, 'dec': 2}},
+            'cv': {'file': 'ogle4_CV.dat', 'columns': {'name': 0, 'ra': 1, 'dec': 2}},
+            'rrlyrae': {'file': 'ogle4_rrlyrae.dat', 'columns': {'name': 0, 'ra': 2, 'dec': 3}},
+            'rot': {'file': 'ogle4_rot.dat', 'columns': {'name': 0, 'ra': 1, 'dec': 2}},
+            'transits': {'file': 'ogle4_transits.dat', 'columns': {'name': 0, 'ra': 1, 'dec': 2}},
+            'blap': {'file': 'ogle4_blap.dat', 'columns': {'name': 0, 'ra': 3, 'dec': 4}}
+        }
     }
-}
+    return config
 
 def find_ogle_variables(args, config):
     """
@@ -40,6 +44,7 @@ def find_ogle_variables(args, config):
     """
 
     # Load and combine the lists of OGLE4 variables of different types
+    config = load_config()
     ogle_catalog = load_ogle_variable_catalogs(config)
 
     # Identify those objects within the field of view of all given fields
@@ -68,27 +73,7 @@ def load_ogle_variable_catalogs(config):
         'dec': []
     }
     for cat_type, cat_config in config['variable_catalogs'].items():
-        with open(path.join(config['data_dir'],cat_config['file']), 'r') as f:
-            lines = f.readlines()
-            for entry in lines:
-                if len(entry.replace('\n','')) > 0:
-                    data = entry.replace('\n', '').split()
-                    name = data[cat_config['columns']['name']]
-                    if isinstance(cat_config['columns']['ra'], int):
-                        ra = data[cat_config['columns']['ra']]
-                        dec = data[cat_config['columns']['dec']]
-                    else:
-                        ra = data[cat_config['columns']['ra'][0]] \
-                                   + ':' + data[cat_config['columns']['ra'][1]] \
-                                   + ':' + data[cat_config['columns']['ra'][2]]
-                        dec = data[cat_config['columns']['dec'][0]] \
-                             + ':' + data[cat_config['columns']['dec'][1]] \
-                             + ':' + data[cat_config['columns']['dec'][2]]
-
-                    catalog['name'].append(name)
-                    catalog['type'].append(cat_type)
-                    catalog['ra'].append(ra)
-                    catalog['dec'].append(dec)
+        catalog = parse_ogle_variable_catalog(catalog, config['data_dir'], cat_type, cat_config)
 
     ogle_catalog = Table([
         Column(name='Name', data=catalog['name']),
@@ -100,6 +85,35 @@ def load_ogle_variable_catalogs(config):
     print('Loaded ' + str(len(ogle_catalog)) + ' known variables from OGLE 4')
 
     return ogle_catalog
+
+def parse_ogle_variable_catalog(catalog, data_dir, cat_type, cat_config):
+    """
+    Function to parse a single variable star catalog from OGLE
+    """
+
+    with open(path.join(data_dir, cat_config['file']), 'r') as f:
+        lines = f.readlines()
+        for entry in lines:
+            if len(entry.replace('\n', '')) > 0:
+                data = entry.replace('\n', '').split()
+                name = data[cat_config['columns']['name']]
+                if isinstance(cat_config['columns']['ra'], int):
+                    ra = data[cat_config['columns']['ra']]
+                    dec = data[cat_config['columns']['dec']]
+                else:
+                    ra = data[cat_config['columns']['ra'][0]] \
+                         + ':' + data[cat_config['columns']['ra'][1]] \
+                         + ':' + data[cat_config['columns']['ra'][2]]
+                    dec = data[cat_config['columns']['dec'][0]] \
+                          + ':' + data[cat_config['columns']['dec'][1]] \
+                          + ':' + data[cat_config['columns']['dec'][2]]
+
+                catalog['name'].append(name)
+                catalog['type'].append(cat_type)
+                catalog['ra'].append(ra)
+                catalog['dec'].append(dec)
+
+    return catalog
 
 def get_args():
     """
